@@ -36,7 +36,7 @@ export function EnquirySection() {
                       <Phone className="h-5 w-5 text-brand-accent" aria-hidden="true" />
                     </span>
                     <span>
-                      <span className="block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-brand-steel">Call the branch</span>
+                      <span className="block font-medium text-[0.65rem] uppercase tracking-[0.18em] text-brand-steel">Call the branch</span>
                       <span className="font-display text-lg font-semibold">{site.contact.phone.label}</span>
                     </span>
                   </a>
@@ -45,7 +45,7 @@ export function EnquirySection() {
                       <MessageCircle className="h-5 w-5 text-brand-whatsapp" aria-hidden="true" />
                     </span>
                     <span>
-                      <span className="block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-brand-steel">WhatsApp</span>
+                      <span className="block font-medium text-[0.65rem] uppercase tracking-[0.18em] text-brand-steel">WhatsApp</span>
                       <span className="font-display text-lg font-semibold">{site.contact.whatsapp.label}</span>
                     </span>
                   </a>
@@ -54,7 +54,7 @@ export function EnquirySection() {
                       <Mail className="h-5 w-5 text-brand-accent" aria-hidden="true" />
                     </span>
                     <span>
-                      <span className="block font-mono text-[0.65rem] uppercase tracking-[0.18em] text-brand-steel">Email</span>
+                      <span className="block font-medium text-[0.65rem] uppercase tracking-[0.18em] text-brand-steel">Email</span>
                       <span className="font-display text-lg font-semibold">{site.contact.email.primary}</span>
                     </span>
                   </a>

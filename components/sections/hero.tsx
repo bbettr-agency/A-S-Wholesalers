@@ -30,8 +30,9 @@ export function Hero() {
           <div className="max-w-xl">
             <div {...h.lcp}>
               <Eyebrow>{hero.eyebrow}</Eyebrow>
-              <h1 className="mt-4 font-display text-4xl font-bold leading-[1.04] tracking-tight text-brand-ink md:text-5xl lg:text-[3.5rem]">
-                {hero.headline} <Accent>{hero.headlineAccent}</Accent> {hero.headlineRest}
+              <h1 className="mt-4 font-display text-[2.6rem] font-extrabold leading-[1.02] tracking-[-0.02em] text-brand-ink sm:text-5xl md:text-6xl lg:text-[4rem]">
+                {hero.headline}
+                <br className="hidden sm:block" /> <Accent>{hero.headlineAccent}</Accent> {hero.headlineRest}
               </h1>
             </div>
 
@@ -79,17 +80,17 @@ export function Hero() {
 
               {/* floating datasheet chips */}
               <div className="pointer-events-none absolute left-4 top-20 hidden rounded-lg bg-white/90 px-3 py-2 shadow-lift ring-1 ring-brand-line backdrop-blur sm:block">
-                <div className="font-mono text-[0.6rem] uppercase tracking-[0.16em] text-brand-steel">Capacity</div>
+                <div className="font-medium text-[0.6rem] uppercase tracking-[0.16em] text-brand-steel">Capacity</div>
                 <div className="tnum font-display text-sm font-bold text-brand-ink">{hero.productChips[0]}</div>
               </div>
               <div className="pointer-events-none absolute bottom-16 right-5 hidden rounded-lg bg-white/90 px-3 py-2 shadow-lift ring-1 ring-brand-line backdrop-blur sm:block">
-                <div className="font-mono text-[0.6rem] uppercase tracking-[0.16em] text-brand-steel">Refrigerant</div>
+                <div className="font-medium text-[0.6rem] uppercase tracking-[0.16em] text-brand-steel">Refrigerant</div>
                 <div className="tnum font-display text-sm font-bold text-brand-ink">{hero.productChips[1]}</div>
               </div>
 
               <div className="mt-4 flex flex-col gap-1 border-t border-brand-line pt-4 sm:flex-row sm:items-center sm:justify-between">
                 <span className="text-sm font-medium text-brand-graphite">{hero.productCaption}</span>
-                <span className="tnum font-mono text-xs uppercase tracking-wide text-brand-steel">{hero.productChips[2]}</span>
+                <span className="tnum font-medium text-xs uppercase tracking-wide text-brand-steel">{hero.productChips[2]}</span>
               </div>
             </div>
           </div>

@@ -24,7 +24,7 @@ export function Footer() {
               />
               <div>
                 <p className="font-display text-lg font-bold text-brand-bone">{site.name}</p>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-brand-steel">
+                <p className="font-medium text-[0.7rem] uppercase tracking-[0.18em] text-brand-steel">
                   {site.descriptor}
                 </p>
               </div>
@@ -48,14 +48,14 @@ export function Footer() {
           {/* Nav columns */}
           {footerNav.map((col) => (
             <nav key={col.heading} aria-label={col.heading}>
-              <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-brand-steel">{col.heading}</p>
+              <p className="font-medium text-[0.7rem] uppercase tracking-[0.18em] text-brand-steel">{col.heading}</p>
               <ul className="mt-4 space-y-3 text-sm">
                 {col.items.map((item) => (
                   <li key={item.href}>
                     <Link href={item.href} className="inline-flex items-center gap-1.5 transition-colors hover:text-brand-bone">
                       {item.label}
                       {item.status === "soon" ? (
-                        <span className="font-mono text-[0.55rem] uppercase tracking-wider text-brand-steel">soon</span>
+                        <span className="font-medium text-[0.55rem] uppercase tracking-wider text-brand-steel">soon</span>
                       ) : null}
                     </Link>
                   </li>

@@ -24,7 +24,7 @@ export function localBusinessSchema() {
       postalCode: site.address.postalCode,
       addressCountry: "ZA",
     },
-    areaServed: { "@type": "Country", name: "South Africa" },
+    areaServed: { "@type": "AdministrativeArea", name: "Gauteng, South Africa" },
     openingHoursSpecification: site.hours.schema.map((h) => ({
       "@type": "OpeningHoursSpecification",
       dayOfWeek: h.days.map((d) => `https://schema.org/${d}`),

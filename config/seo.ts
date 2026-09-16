@@ -12,7 +12,7 @@ export const seo = {
   titleDefault: "Haier Air Conditioning Supplier | A&S Wholesalers",
   titleTemplate: "%s | A&S Wholesalers",
   description:
-    "A&S Wholesalers supplies the full Haier air conditioning range — residential and commercial — across South Africa. Enquire from our Centurion branch.",
+    "A&S Wholesalers supplies the full Haier air conditioning range — residential and commercial — from Centurion, Gauteng. Enquire online, WhatsApp or call.",
   keywords: [
     "Haier air conditioning South Africa",
     "Haier air conditioners",

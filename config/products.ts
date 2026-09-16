@@ -238,6 +238,120 @@ export const families: ProductFamily[] = [
   },
 ];
 
+/**
+ * System stages — the immersive "Airflow Gallery". Five air-conditioning SYSTEM
+ * TYPES (not nine cards), each grouping its real catalogue families. `airflow`
+ * selects the product-specific airflow visualisation. All facts are Haier's.
+ */
+export type AirflowKind = "wall" | "solar" | "multi" | "ducted" | "cassette";
+
+export interface SystemStage {
+  n: string;
+  key: AirflowKind;
+  type: string;
+  solutionType: SolutionType;
+  families: string[];
+  statement: string;
+  capacity: string;
+  btu: string;
+  attributes: string[];
+  image: string;
+  imageAlt: string;
+}
+
+export const systemStages: SystemStage[] = [
+  {
+    n: "01",
+    key: "wall",
+    type: "Wall-mounted",
+    solutionType: "wall",
+    families: ["Aeropure Inverter", "AI ECO Inverter", "Turbo Cooling"],
+    statement: "The everyday split — a bedroom, an office, a shop floor.",
+    capacity: "2.5 – 6.7 kW",
+    btu: "9,000 – 24,000 BTU",
+    attributes: [
+      "DC full-inverter, up to A++",
+      "UVC Plus + Self-Clean air",
+      "Anti-corrosion coil",
+      "WiFi + AI ECO control",
+    ],
+    image: "/images/products/haier-aeropure.jpg",
+    imageAlt: "Haier Aeropure wall-mounted split — the wall-mounted system type",
+  },
+  {
+    n: "02",
+    key: "solar",
+    type: "Solar",
+    solutionType: "solar",
+    families: ["Solar-ECO Inverter"],
+    statement: "Cooling that runs off the sun — straight through load-shedding.",
+    capacity: "5.35 kW",
+    btu: "18,000 BTU",
+    attributes: [
+      "DC solar direct-drive (MC4)",
+      "Solar & grid auto-balance",
+      "Wide voltage 150 – 264 V",
+      "Self-Clean evaporator",
+    ],
+    image: "/images/products/haier-solar-eco.jpg",
+    imageAlt: "Haier Solar-ECO split — the solar-powered system type",
+  },
+  {
+    n: "03",
+    key: "multi",
+    type: "Multi-split",
+    solutionType: "multi",
+    families: ["Multi ODU · Free Match"],
+    statement: "One outdoor unit. Several rooms, each controlled on its own.",
+    capacity: "5.0 – 8.0 kW",
+    btu: "2, 3 & 4-room outdoor units",
+    attributes: [
+      "Up to 4 indoor units",
+      "Mix wall, cassette & ducted",
+      "Twin-rotary compressor",
+      "Independent room control",
+    ],
+    image: "/images/products/haier-multi-odu.jpg",
+    imageAlt: "Haier Multi ODU Free Match outdoor unit — the multi-split system type",
+  },
+  {
+    n: "04",
+    key: "ducted",
+    type: "Ducted",
+    solutionType: "ducted",
+    families: ["LSP Duct", "MSP Duct"],
+    statement: "Concealed in the ceiling — climate you feel, not see.",
+    capacity: "2.5 – 10.5 kW",
+    btu: "8,500 – 36,000 BTU",
+    attributes: [
+      "Slim 180 mm body (LSP)",
+      "Higher static pressure (MSP)",
+      "Dual-fan air supply",
+      "Built-in water pump",
+    ],
+    image: "/images/products/haier-lsp-duct.jpg",
+    imageAlt: "Haier LSP ducted indoor unit — the ducted system type",
+  },
+  {
+    n: "05",
+    key: "cassette",
+    type: "Cassette",
+    solutionType: "cassette",
+    families: ["Mini Cassette", "Cassette"],
+    statement: "Ceiling-recessed — even 360° airflow across an open floor.",
+    capacity: "2.5 – 10.5 kW",
+    btu: "8,500 – 36,000 BTU",
+    attributes: [
+      "360° 4-way airflow",
+      "56 °C Steri-Clean",
+      "Independent louvres",
+      "Fresh-air intake",
+    ],
+    image: "/images/products/haier-cassette.jpg",
+    imageAlt: "Haier ceiling cassette — the cassette system type",
+  },
+];
+
 export function familyById(id: string): ProductFamily | undefined {
   return families.find((f) => f.id === id);
 }

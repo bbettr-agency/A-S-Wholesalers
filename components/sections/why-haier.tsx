@@ -22,17 +22,17 @@ export function WhyHaier() {
             <SectionHeading eyebrow={whyHaier.eyebrow} heading={whyHaier.heading} lead={whyHaier.lead} maxWidth="max-w-md" />
           </Reveal>
 
-          <Stagger className="grid gap-x-8 gap-y-8 sm:grid-cols-2">
+          <Stagger className="grid gap-x-10 gap-y-9 sm:grid-cols-2">
             {whyHaier.pillars.map((p, i) => {
               const Icon = PILLAR_ICONS[i];
               return (
                 <Reveal key={p.title} preset="fadeUpItem">
-                  <div className="border-t border-brand-line pt-5">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-white text-brand-primary ring-1 ring-brand-line">
-                      <Icon className="h-5 w-5" aria-hidden="true" />
-                    </span>
-                    <h3 className="mt-4 font-display text-lg font-semibold text-brand-ink">{p.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-brand-graphite">{p.body}</p>
+                  <div className="border-t-2 border-brand-ink/10 pt-5">
+                    <div className="flex items-center gap-2.5">
+                      <Icon className="h-5 w-5 text-brand-accent" aria-hidden="true" />
+                      <h3 className="font-display text-lg font-semibold text-brand-ink">{p.title}</h3>
+                    </div>
+                    <p className="mt-2.5 text-sm leading-relaxed text-brand-graphite">{p.body}</p>
                   </div>
                 </Reveal>
               );
@@ -43,7 +43,7 @@ export function WhyHaier() {
         {/* Haier credentials — dark inset, explicitly Haier's */}
         <Reveal>
           <div className="mt-14 rounded-3xl bg-brand-ink p-8 text-brand-bone shadow-ink md:p-10">
-            <p className="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-brand-fog">
+            <p className="font-medium text-[0.7rem] uppercase tracking-[0.2em] text-brand-fog">
               Haier — the manufacturer behind the range
             </p>
             <dl className="mt-6 grid gap-8 sm:grid-cols-3">
@@ -55,7 +55,7 @@ export function WhyHaier() {
                   <dd className="mt-2 text-sm leading-relaxed text-brand-fog">
                     {c.label}
                     {c.source ? (
-                      <span className="mt-1 block font-mono text-[0.65rem] uppercase tracking-wide text-brand-steel">
+                      <span className="mt-1 block font-medium text-[0.65rem] uppercase tracking-wide text-brand-steel">
                         {c.source}
                       </span>
                     ) : null}

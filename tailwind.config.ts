@@ -51,9 +51,12 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "system-ui", "sans-serif"],
-        body: ["var(--font-body)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+        // Single primary typeface across the whole site. display/body/mono all map
+        // to Poppins so any existing utility renders Poppins; hierarchy comes from
+        // weight, size and tracking — never a second face.
+        display: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        body: ["var(--font-poppins)", "system-ui", "sans-serif"],
+        mono: ["var(--font-poppins)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         lg: "0.5rem",

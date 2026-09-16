@@ -2,7 +2,7 @@ import { Hero } from "@/components/sections/hero";
 import { Positioning } from "@/components/sections/positioning";
 import { RangeDiscovery } from "@/components/sections/range-discovery";
 import { WhyHaier } from "@/components/sections/why-haier";
-import { ProductFamilies } from "@/components/sections/product-families";
+import { AirflowGallery } from "@/components/sections/airflow-gallery";
 import { ResidentialCommercial } from "@/components/sections/residential-commercial";
 import { SupplierValue } from "@/components/sections/supplier-value";
 import { Location } from "@/components/sections/location";
@@ -20,7 +20,7 @@ export function HomePage() {
       <Positioning />
       <RangeDiscovery />
       <WhyHaier />
-      <ProductFamilies />
+      <AirflowGallery />
       <ResidentialCommercial />
       <SupplierValue />
       <Location />

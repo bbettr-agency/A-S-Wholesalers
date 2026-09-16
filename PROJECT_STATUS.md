@@ -2,7 +2,29 @@
 
 **Built on:** Bbettr Website OS v2.7.0
 **Phase:** 1 — Homepage demo (for client approval)
-**Status:** Built, verified, deployed. Awaiting client sign-off before building remaining pages.
+**Status:** Built + polished, verified, deployed. Awaiting client sign-off before building remaining pages.
+
+## Polish pass (2026-09-16)
+
+- **Typography → Poppins everywhere.** Single primary typeface via `next/font`
+  (weights 400/500/600/700/800). No secondary/monospace face — the technical
+  "datasheet" feel is Poppins Medium/Semibold, uppercase, tracked. Hero at 800.
+- **Signature section — the Airflow Gallery** replaces the old product-card grid.
+  Desktop: a scroll-pinned stage cycling the five SYSTEM TYPES (Wall / Solar /
+  Multi-split / Ducted / Cassette), each with a product-specific SVG airflow
+  visual (Coanda, solar energy, one→many, ceiling descent, 360° radial), crossfade
+  transitions, and a clickable stepper. Mobile / no-JS / reduced-data: stacked
+  editorial stages (never nine cards). A restrained full-catalogue index (all nine
+  families) sits underneath for utility. All airflow is CSS/SVG, compositor-only,
+  gated by `prefers-reduced-motion`; no animation library added.
+- **Claim correction.** "supplied across South Africa" (national reach NOT
+  confirmed) → "supplied from Centurion" across hero, site config, SEO, OG image
+  and schema `areaServed` (now Gauteng, not Country). Centurion is confirmed.
+- **De-AI refinements.** Removed the boxed-icon "feature block" pattern in
+  Why-Haier (now hairline-topped editorial), replaced generic pills in
+  Residential/Commercial with a ticked inline list, and broke the uniform card
+  rhythm by replacing the product grid with the airflow experience.
+- Old `components/sections/product-families.tsx` removed.
 
 ---
 
@@ -19,10 +41,10 @@ design foundation for the full site (Products, About, Solutions, Gallery, Contac
   specification, balanced by strong product presentation and whitespace.
 - **Motion character:** `precise` (0.45 section / 0.4 card / 0.6 hero, stagger 0.05).
   Engineered/technical, fits HVAC + the datasheet concept.
-- **Typefaces:** Display **Schibsted Grotesk** · Body **IBM Plex Sans** ·
-  **IBM Plex Mono** (documented data-only third face — model codes, BTU/kW/mm; the
-  datasheet motif is core to the concept, so the deviation from "two faces" is
-  deliberate and confined to micro data labels).
+- **Typefaces:** **Poppins** only (client-directed) — one primary face across the
+  whole site, weights 400/500/600/700/800. Hierarchy from weight, size and
+  tracking; the datasheet/technical feel is Poppins Medium/Semibold uppercase +
+  letter-spacing, not a second face.
 - **Colour:** primary A&S navy `#1B2A4A` · accent A&S signal-red `#C1121F`
   (**primary CTA only**) · WhatsApp green `#25D366` · cool-tinted ink scale ·
   light surfaces bone/mist. All contrast pairs measured (see below).

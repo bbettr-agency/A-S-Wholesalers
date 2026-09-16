@@ -1,38 +1,24 @@
 /**
- * Type system — two primary faces + one data-only accent.
+ * Type system — Poppins as the single primary typeface across the entire site.
  *
- * Display: Schibsted Grotesk — precise, contemporary grotesque (deliberately not
- *          the Inter / Space Grotesk "AI-website" tell).
- * Body:    IBM Plex Sans — genuine engineering heritage, tabular figures, excellent
- *          at small sizes; carries the argument.
- * Mono:    IBM Plex Mono — DELIBERATE data-only accent for the datasheet motif
- *          (model codes, BTU / kW / mm). Documented deviation in PROJECT_STATUS.md;
- *          it appears only in micro data labels, never in reading copy.
+ * One family, intentional weights for hierarchy:
+ *   400 body / supporting copy
+ *   500 navigation, labels, metadata, product specs
+ *   600 buttons, product titles, subheadings
+ *   700 major headings
+ *   800 hero
  *
- * Weights held to three sitewide: 400 (body), 500 (emphasis / labels / mono),
- * 700 (display headings). Self-hosted via next/font, display: swap.
+ * The "technical / product-catalogue" feel (eyebrows, model codes, data labels)
+ * is achieved with Poppins Medium/Semibold, uppercase and deliberate tracking —
+ * NOT a second monospace face. Self-hosted via next/font, display: swap.
  */
-import { Schibsted_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-export const fontDisplay = Schibsted_Grotesk({
+export const fontPoppins = Poppins({
   subsets: ["latin"],
-  weight: ["500", "700"],
-  variable: "--font-display",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
-export const fontBody = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-export const fontMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["500"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
-export const fontVariables = `${fontDisplay.variable} ${fontBody.variable} ${fontMono.variable}`;
+export const fontVariables = fontPoppins.variable;

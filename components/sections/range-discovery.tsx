@@ -87,7 +87,7 @@ export function RangeDiscovery() {
           <div className="grid gap-8 p-6 md:grid-cols-[1fr_1.1fr] md:p-8 lg:gap-10">
             <div className="flex flex-col justify-between">
               <div>
-                <p className="font-mono text-[0.7rem] uppercase tracking-[0.18em] text-brand-steel">
+                <p className="font-medium text-[0.7rem] uppercase tracking-[0.18em] text-brand-steel">
                   {activeSolution.label}
                 </p>
                 <p className="mt-3 max-w-md text-lg leading-relaxed text-brand-graphite">{activeSolution.summary}</p>

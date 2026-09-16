@@ -29,7 +29,7 @@ export function SupplierValue() {
             {supplierPoints.map((p, i) => (
               <Reveal key={p.title} preset="fadeUpItem">
                 <div className="flex gap-5 bg-brand-bone p-6 md:p-7">
-                  <span className="tnum font-mono text-sm font-medium text-brand-accent">
+                  <span className="tnum font-medium text-sm font-medium text-brand-accent">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>

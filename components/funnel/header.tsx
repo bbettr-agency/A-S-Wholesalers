@@ -43,7 +43,7 @@ export function Header() {
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 text-xs lg:px-8">
-          <span className="font-mono uppercase tracking-[0.16em]">{site.hours.weekdays}</span>
+          <span className="font-medium uppercase tracking-[0.16em]">{site.hours.weekdays}</span>
           <div className="flex items-center gap-5">
             <a href={telLink} className="inline-flex items-center gap-1.5 transition-colors hover:text-brand-bone" data-cta="call">
               <Phone className="h-3.5 w-3.5" aria-hidden="true" />
@@ -94,7 +94,7 @@ export function Header() {
               >
                 {item.label}
                 {item.status === "soon" ? (
-                  <span className="ml-1 align-super font-mono text-[0.55rem] uppercase tracking-wider text-brand-steel">soon</span>
+                  <span className="ml-1 align-super font-medium text-[0.55rem] uppercase tracking-wider text-brand-steel">soon</span>
                 ) : null}
                 <span className="absolute inset-x-3 -bottom-px h-px scale-x-0 bg-brand-accent transition-transform duration-200 ease-brand group-hover:scale-x-100" />
               </Link>
@@ -149,7 +149,7 @@ export function Header() {
                 >
                   {item.label}
                   {item.status === "soon" ? (
-                    <span className="font-mono text-[0.6rem] uppercase tracking-wider text-brand-steel">soon</span>
+                    <span className="font-medium text-[0.6rem] uppercase tracking-wider text-brand-steel">soon</span>
                   ) : null}
                 </Link>
               </li>

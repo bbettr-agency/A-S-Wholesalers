@@ -51,10 +51,10 @@ export function ResidentialCommercial() {
                   <div className="flex flex-1 flex-col p-6 md:p-7">
                     <h3 className="font-display text-xl font-semibold text-brand-ink">{c.title}</h3>
                     <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-graphite">{c.body}</p>
-                    <ul className="mt-5 flex flex-wrap gap-2">
+                    <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-1.5">
                       {c.types.map((t) => (
-                        <li key={t} className="rounded-full bg-brand-mist px-3 py-1 text-xs font-medium text-brand-primary ring-1 ring-brand-line">
-                          {t}
+                        <li key={t} className="flex items-center gap-2 text-sm font-medium text-brand-graphite">
+                          <span className="h-1 w-1 rounded-full bg-brand-accent" aria-hidden="true" /> {t}
                         </li>
                       ))}
                     </ul>

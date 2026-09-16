@@ -12,7 +12,7 @@ export function ModelCode({ children, onDark }: { children: ReactNode; onDark?: 
   return (
     <span
       className={cn(
-        "tnum inline-flex items-center rounded font-mono text-[0.7rem] uppercase tracking-wide px-1.5 py-0.5 ring-1",
+        "tnum inline-flex items-center rounded font-medium text-[0.7rem] uppercase tracking-wide px-1.5 py-0.5 ring-1",
         onDark
           ? "text-brand-fog ring-white/15"
           : "text-brand-graphite ring-brand-line bg-brand-bone",
@@ -43,7 +43,7 @@ export function DataChip({
         className,
       )}
     >
-      <div className={cn("font-mono text-[0.65rem] uppercase tracking-[0.14em]", onDark ? "text-brand-fog" : "text-brand-steel")}>
+      <div className={cn("font-medium text-[0.65rem] uppercase tracking-[0.14em]", onDark ? "text-brand-fog" : "text-brand-steel")}>
         {label}
       </div>
       <div className={cn("tnum mt-0.5 font-display text-sm font-bold", onDark ? "text-brand-bone" : "text-brand-ink")}>
@@ -65,7 +65,7 @@ export function DimensionRule({ label, className, onDark }: { label?: string; cl
     <div className={cn("flex items-center gap-3", className)} aria-hidden="true">
       <span className={cn("h-2 w-px", tick)} />
       <span className={cn("h-px flex-1", line)} />
-      {label ? <span className={cn("font-mono text-[0.65rem] uppercase tracking-[0.2em]", text)}>{label}</span> : null}
+      {label ? <span className={cn("font-medium text-[0.65rem] uppercase tracking-[0.2em]", text)}>{label}</span> : null}
       <span className={cn("h-px flex-1", line)} />
       <span className={cn("h-2 w-px", tick)} />
     </div>

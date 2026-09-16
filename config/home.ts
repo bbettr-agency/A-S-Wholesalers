@@ -6,12 +6,13 @@
  */
 
 export const hero = {
-  eyebrow: "Haier air conditioning · supplied from Centurion",
-  // H1: entity + category + country. Accent span on the differentiator word.
+  eyebrow: "The Haier air conditioning specialists",
+  // H1: entity + category + location (Centurion is confirmed; national reach is NOT
+  // — so the headline stays factually Centurion-based). Accent on the key word.
   headline: "Haier air conditioning,",
   headlineAccent: "supplied",
-  headlineRest: "across South Africa.",
-  sub: "A&S Wholesalers stocks the complete Haier range — wall-mounted, multi-split, ducted, cassette and solar — for homes and businesses, from our branch in Centurion, Gauteng.",
+  headlineRest: "from Centurion.",
+  sub: "A&S Wholesalers stocks the complete Haier range — wall-mounted, multi-split, ducted, cassette and solar — for homes and businesses. Enquire from our branch in Centurion, Gauteng.",
   primaryCta: { label: "Send an enquiry", href: "#enquire" },
   secondaryCta: { label: "See the range", href: "#range" },
   // Floating data chips on the hero product render (datasheet motif).
@@ -56,11 +57,15 @@ export const whyHaier = {
 };
 
 export const products = {
-  eyebrow: "The range",
-  heading: "The Haier families we supply.",
-  lead: "From a bedroom split to a commercial cassette floor — the model codes and capacities are straight off the datasheet.",
-  residentialHeading: "Wall-mounted & solar",
-  commercialHeading: "Multi-split, ducted & cassette",
+  // The immersive Airflow Gallery — a demonstration of how each SYSTEM TYPE moves
+  // air (distinct from the quick finder above, which answers "which do I need?").
+  eyebrow: "The systems, shown",
+  heading: "See how each Haier system moves air.",
+  lead: "Five system types, five ways of delivering air — from a wall split to a 360° ceiling cassette. Scroll through the range.",
+  scrollHint: "Scroll to move through the systems",
+  exploreEyebrow: "The full catalogue",
+  exploreHeading: "Explore all nine Haier ranges",
+  exploreLead: "Every family we supply, with capacities and model codes. Enquire on any of them now.",
 };
 
 export const resiComm = {

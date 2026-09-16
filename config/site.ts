@@ -20,8 +20,9 @@ export const site = {
   country: "South Africa",
   countryCode: "ZA",
 
-  // What A&S does, in the client's own words (onboarding).
-  tagline: "Haier air conditioning, supplied across South Africa.",
+  // What A&S does, in the client's own words (onboarding). Centurion is confirmed;
+  // national distribution is NOT confirmed, so wording stays Centurion-based.
+  tagline: "Haier air conditioning, supplied from Centurion.",
   shortDescription:
     "A&S Wholesalers supplies the full Haier air conditioning range — residential and commercial — from Centurion, Gauteng.",
 

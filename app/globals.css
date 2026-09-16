@@ -21,13 +21,12 @@
   body {
     @apply bg-brand-bone text-brand-ink font-body antialiased;
     text-rendering: optimizeLegibility;
-    font-feature-settings: "kern", "liga", "cv05";
+    font-feature-settings: "kern", "liga";
   }
 
-  /* Tabular figures for spec data — model codes, BTU, kW, mm */
+  /* Lining, evenly-spaced figures for spec data — BTU, kW, capacities */
   .tnum {
-    font-feature-settings: "tnum", "kern";
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric: lining-nums tabular-nums;
   }
 
   /* Designed, visible focus ring on every surface (tokens: state.focus, 2px, 2px offset) */
@@ -64,6 +63,65 @@
     to {
       opacity: 1;
     }
+  }
+}
+
+/* ── Airflow Gallery motion — "making invisible air visible" ──
+   Restrained, compositor-friendly, and only when the visitor allows motion.
+   Under reduced-motion these all resolve to their static final state. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes afFlow {
+    to {
+      stroke-dashoffset: -340;
+    }
+  }
+  @keyframes afRadiate {
+    0% {
+      opacity: 0;
+      transform: scale(0.72);
+    }
+    18% {
+      opacity: 0.55;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.18);
+    }
+  }
+  @keyframes afDescend {
+    to {
+      stroke-dashoffset: -220;
+    }
+  }
+  @keyframes afGlow {
+    0%,
+    100% {
+      opacity: 0.28;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .af-flow {
+    stroke-dasharray: 10 14;
+    animation: afFlow 5.5s linear infinite;
+  }
+  .af-flow-slow {
+    stroke-dasharray: 8 18;
+    animation: afFlow 8s linear infinite;
+  }
+  .af-descend {
+    stroke-dasharray: 6 16;
+    animation: afDescend 4.5s linear infinite;
+  }
+  .af-radiate {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: afRadiate 3.8s ease-out infinite;
+  }
+  .af-glow {
+    animation: afGlow 4.5s ease-in-out infinite;
   }
 }
 
