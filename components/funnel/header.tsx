@@ -102,7 +102,9 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <CallButton size="md" variant="ghost" />
+            <span className="hidden whitespace-nowrap xl:inline-flex">
+              <CallButton size="md" variant="ghost" />
+            </span>
             <Button href="#enquire" variant="primary" size="md">
               Send an enquiry
             </Button>
