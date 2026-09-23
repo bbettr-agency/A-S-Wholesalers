@@ -1,5 +1,5 @@
 /**
- * Type system — Poppins as the single primary typeface across the entire site.
+ * Type system – Poppins as the single primary typeface across the entire site.
  *
  * One family, intentional weights for hierarchy:
  *   400 body / supporting copy

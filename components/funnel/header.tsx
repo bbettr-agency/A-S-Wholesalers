@@ -12,9 +12,9 @@ import { Button } from "@/components/ui/button";
 import { CallButton } from "./channel-buttons";
 
 /**
- * Header — substantial at the top (utility strip + full bar), transforms to a
+ * Header – substantial at the top (utility strip + full bar), transforms to a
  * condensed sticky bar on scroll (background, blur, shadow, height). Never animates
- * height/padding via Motion — CSS transition on transform/opacity/colour only.
+ * height/padding via Motion – CSS transition on transform/opacity/colour only.
  */
 export function Header() {
   const scrolled = useScrollPast(THRESHOLD.header);
@@ -35,7 +35,7 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* Utility strip — hides on scroll */}
+      {/* Utility strip – hides on scroll */}
       <div
         className={cn(
           "hidden border-b border-brand-line bg-brand-ink text-brand-fog transition-[max-height,opacity] duration-300 ease-brand md:block",
@@ -73,7 +73,7 @@ export function Header() {
         )}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
-          <Link href="/" className="flex items-center py-3.5" aria-label={`${site.name} — home`}>
+          <Link href="/" className="flex items-center py-3.5" aria-label={`${site.name} – home`}>
             <Image
               src="/brand/ans-logo.png"
               alt={`${site.name} logo`}

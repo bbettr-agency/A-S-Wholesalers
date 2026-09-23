@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { site, telLink, whatsappLink } from "@/config/site";
 
 /**
- * Channel CTAs — one component owns each channel so the number, label, tracking
+ * Channel CTAs – one component owns each channel so the number, label, tracking
  * hook and pre-filled message cannot drift across the site (OS lesson: Vision
  * Motors' CallButton).
  */

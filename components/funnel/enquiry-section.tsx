@@ -8,7 +8,7 @@ import { enquiryCopy } from "@/config/enquiry";
 import { EnquiryForm } from "./enquiry-form";
 
 /**
- * Enquiry section — the page's single dark spotlight and strongest conversion
+ * Enquiry section – the page's single dark spotlight and strongest conversion
  * moment. Copy on the left with direct channels; the reusable form on the right.
  */
 export function EnquirySection() {

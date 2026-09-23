@@ -1,5 +1,5 @@
 /**
- * Product catalogue — the Haier 2026 South Africa air conditioning range that A&S
+ * Product catalogue – the Haier 2026 South Africa air conditioning range that A&S
  * supplies. Data taken from the supplied Haier catalogue (model codes, capacities,
  * energy classes, features). Homepage shows FAMILIES grouped by installation type;
  * the full per-SKU catalogue is a future /products build.
@@ -12,7 +12,7 @@ export type SolutionType = "wall" | "multi" | "ducted" | "cassette" | "solar";
 export interface Solution {
   type: SolutionType;
   label: string;
-  /** One-line "who it's for" — drives the discovery selector. */
+  /** One-line "who it's for" – drives the discovery selector. */
   summary: string;
   /** The visitor-facing question this answers. */
   forWho: string;
@@ -41,7 +41,7 @@ export interface ProductFamily {
   blurb: string;
 }
 
-/** The five ways to install — the homepage self-selection mechanic. */
+/** The five ways to install – the homepage self-selection mechanic. */
 export const solutions: Solution[] = [
   {
     type: "wall",
@@ -95,7 +95,7 @@ export const families: ProductFamily[] = [
     highlights: ["Black-glass panel", "UVC Plus option", "Self-Clean", "AI ECO", "WiFi control"],
     image: "/images/products/haier-aeropure.jpg",
     imageAlt:
-      "Haier Aeropure Inverter — black-glass wall-mounted indoor unit, outdoor condenser and remote controllers",
+      "Haier Aeropure Inverter – black-glass wall-mounted indoor unit, outdoor condenser and remote controllers",
     blurb:
       "The flagship wall split. A black-glass indoor unit with UVC Plus sterilisation, Self-Clean and full inverter efficiency.",
   },
@@ -113,7 +113,7 @@ export const families: ProductFamily[] = [
     highlights: ["AI ECO learning", "Hyper PCB", "Free Match indoor", "UVC Plus option"],
     image: "/images/products/haier-ai-eco.jpg",
     imageAlt:
-      "Haier AI ECO Inverter — white wall-mounted indoor unit with outdoor condenser unit",
+      "Haier AI ECO Inverter – white wall-mounted indoor unit with outdoor condenser unit",
     blurb:
       "The core inverter split. AI ECO learns usage to trim running cost, with the Hyper PCB built for unstable supply.",
   },
@@ -130,7 +130,7 @@ export const families: ProductFamily[] = [
     refrigerant: "R32",
     highlights: ["Fast cooling", "Anti-Corrosion coil", "Easy to maintain", "WiFi ready"],
     image: "/images/products/haier-turbo.jpg",
-    imageAlt: "Haier Turbo Cooling — white wall-mounted split with outdoor condenser unit",
+    imageAlt: "Haier Turbo Cooling – white wall-mounted split with outdoor condenser unit",
     blurb:
       "The value wall split. Quick cooling and an anti-corrosion coil for coastal and dusty conditions.",
   },
@@ -147,9 +147,9 @@ export const families: ProductFamily[] = [
     refrigerant: "R32",
     highlights: ["DC solar direct-drive (MC4)", "Solar & grid auto-balance", "Wide voltage 150–264 V", "Self-Clean"],
     image: "/images/products/haier-solar-eco.jpg",
-    imageAlt: "Haier Solar-ECO Inverter — white wall-mounted split powered by DC solar panels",
+    imageAlt: "Haier Solar-ECO Inverter – white wall-mounted split powered by DC solar panels",
     blurb:
-      "Plugs straight into solar panels via MC4 and balances between solar and grid automatically — cooling through load-shedding and high tariffs.",
+      "Plugs straight into solar panels via MC4 and balances between solar and grid automatically – cooling through load-shedding and high tariffs.",
   },
   {
     id: "multi-odu",
@@ -164,9 +164,9 @@ export const families: ProductFamily[] = [
     refrigerant: "R32",
     highlights: ["Up to 4 indoor units", "Twin-rotary compressor", "Mix indoor types", "Independent room control"],
     image: "/images/products/haier-multi-odu.jpg",
-    imageAlt: "Haier Multi ODU Free Match — single outdoor condenser unit that drives multiple indoor units",
+    imageAlt: "Haier Multi ODU Free Match – single outdoor condenser unit that drives multiple indoor units",
     blurb:
-      "One outdoor unit runs up to four indoor units — wall, cassette or ducted — each controlled independently. Fewer outdoor units, less roof clutter.",
+      "One outdoor unit runs up to four indoor units – wall, cassette or ducted – each controlled independently. Fewer outdoor units, less roof clutter.",
   },
   {
     id: "lsp-duct",
@@ -183,7 +183,7 @@ export const families: ProductFamily[] = [
     image: "/images/products/haier-lsp-duct.jpg",
     imageAlt: "Haier LSP low-static ducted indoor unit with wired controller and outdoor condenser",
     blurb:
-      "Low-static ducted at just 180 mm deep — concealed cooling that fits where a full ducted unit won't.",
+      "Low-static ducted at just 180 mm deep – concealed cooling that fits where a full ducted unit won't.",
   },
   {
     id: "msp-duct",
@@ -200,7 +200,7 @@ export const families: ProductFamily[] = [
     image: "/images/products/haier-msp-duct.jpg",
     imageAlt: "Haier MSP medium-static ducted indoor unit with wired controller and outdoor condenser",
     blurb:
-      "Medium-static ducted for larger areas — a dual-fan supply and higher static pressure for longer duct runs.",
+      "Medium-static ducted for larger areas – a dual-fan supply and higher static pressure for longer duct runs.",
   },
   {
     id: "mini-cassette",
@@ -215,9 +215,9 @@ export const families: ProductFamily[] = [
     refrigerant: "R32",
     highlights: ["Compact 4-way", "56 °C Steri-Clean", "Independent louvres", "Built-in water pump"],
     image: "/images/products/haier-mini-cassette.jpg",
-    imageAlt: "Haier Mini Cassette — compact ceiling-recessed indoor unit with remote and outdoor condenser",
+    imageAlt: "Haier Mini Cassette – compact ceiling-recessed indoor unit with remote and outdoor condenser",
     blurb:
-      "A compact ceiling cassette that drops into a standard tile — 360° airflow with independently controlled louvres.",
+      "A compact ceiling cassette that drops into a standard tile – 360° airflow with independently controlled louvres.",
   },
   {
     id: "cassette",
@@ -232,14 +232,14 @@ export const families: ProductFamily[] = [
     refrigerant: "R32",
     highlights: ["Full-size 4-way", "Even 360° airflow", "56 °C Steri-Clean", "Fresh-air intake"],
     image: "/images/products/haier-cassette.jpg",
-    imageAlt: "Haier Cassette — full-size ceiling-recessed indoor unit with remote and outdoor condenser",
+    imageAlt: "Haier Cassette – full-size ceiling-recessed indoor unit with remote and outdoor condenser",
     blurb:
-      "The full-size cassette for shops, offices and open commercial floors — even 360° airflow across a large area.",
+      "The full-size cassette for shops, offices and open commercial floors – even 360° airflow across a large area.",
   },
 ];
 
 /**
- * System stages — the immersive "Airflow Gallery". Five air-conditioning SYSTEM
+ * System stages – the immersive "Airflow Gallery". Five air-conditioning SYSTEM
  * TYPES (not nine cards), each grouping its real catalogue families. `airflow`
  * selects the product-specific airflow visualisation. All facts are Haier's.
  */
@@ -266,7 +266,7 @@ export const systemStages: SystemStage[] = [
     type: "Wall-mounted",
     solutionType: "wall",
     families: ["Aeropure Inverter", "AI ECO Inverter", "Turbo Cooling"],
-    statement: "The everyday split — a bedroom, an office, a shop floor.",
+    statement: "The everyday split – a bedroom, an office, a shop floor.",
     capacity: "2.5 – 6.7 kW",
     btu: "9,000 – 24,000 BTU",
     attributes: [
@@ -276,7 +276,7 @@ export const systemStages: SystemStage[] = [
       "WiFi + AI ECO control",
     ],
     image: "/images/products/haier-aeropure.jpg",
-    imageAlt: "Haier Aeropure wall-mounted split — the wall-mounted system type",
+    imageAlt: "Haier Aeropure wall-mounted split – the wall-mounted system type",
   },
   {
     n: "02",
@@ -284,7 +284,7 @@ export const systemStages: SystemStage[] = [
     type: "Solar",
     solutionType: "solar",
     families: ["Solar-ECO Inverter"],
-    statement: "Cooling that runs off the sun — straight through load-shedding.",
+    statement: "Cooling that runs off the sun – straight through load-shedding.",
     capacity: "5.35 kW",
     btu: "18,000 BTU",
     attributes: [
@@ -294,7 +294,7 @@ export const systemStages: SystemStage[] = [
       "Self-Clean evaporator",
     ],
     image: "/images/products/haier-solar-eco.jpg",
-    imageAlt: "Haier Solar-ECO split — the solar-powered system type",
+    imageAlt: "Haier Solar-ECO split – the solar-powered system type",
   },
   {
     n: "03",
@@ -312,7 +312,7 @@ export const systemStages: SystemStage[] = [
       "Independent room control",
     ],
     image: "/images/products/haier-multi-odu.jpg",
-    imageAlt: "Haier Multi ODU Free Match outdoor unit — the multi-split system type",
+    imageAlt: "Haier Multi ODU Free Match outdoor unit – the multi-split system type",
   },
   {
     n: "04",
@@ -320,7 +320,7 @@ export const systemStages: SystemStage[] = [
     type: "Ducted",
     solutionType: "ducted",
     families: ["LSP Duct", "MSP Duct"],
-    statement: "Concealed in the ceiling — climate you feel, not see.",
+    statement: "Concealed in the ceiling – climate you feel, not see.",
     capacity: "2.5 – 10.5 kW",
     btu: "8,500 – 36,000 BTU",
     attributes: [
@@ -330,7 +330,7 @@ export const systemStages: SystemStage[] = [
       "Built-in water pump",
     ],
     image: "/images/products/haier-lsp-duct.jpg",
-    imageAlt: "Haier LSP ducted indoor unit — the ducted system type",
+    imageAlt: "Haier LSP ducted indoor unit – the ducted system type",
   },
   {
     n: "05",
@@ -338,7 +338,7 @@ export const systemStages: SystemStage[] = [
     type: "Cassette",
     solutionType: "cassette",
     families: ["Mini Cassette", "Cassette"],
-    statement: "Ceiling-recessed — even 360° airflow across an open floor.",
+    statement: "Ceiling-recessed – even 360° airflow across an open floor.",
     capacity: "2.5 – 10.5 kW",
     btu: "8,500 – 36,000 BTU",
     attributes: [
@@ -348,7 +348,7 @@ export const systemStages: SystemStage[] = [
       "Fresh-air intake",
     ],
     image: "/images/products/haier-cassette.jpg",
-    imageAlt: "Haier ceiling cassette — the cassette system type",
+    imageAlt: "Haier ceiling cassette – the cassette system type",
   },
 ];
 

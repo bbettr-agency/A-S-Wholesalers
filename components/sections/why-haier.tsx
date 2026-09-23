@@ -9,7 +9,7 @@ import { haierCredentials } from "@/config/trust";
 const PILLAR_ICONS: LucideIcon[] = [Zap, ShieldCheck, Wind, Sun];
 
 /**
- * Why Haier — the "why this product range" answer. Technology pillars in A&S's
+ * Why Haier – the "why this product range" answer. Technology pillars in A&S's
  * words, then Haier's own credentials on a dark inset, clearly attributed to Haier
  * (never transferred to A&S).
  */
@@ -40,11 +40,11 @@ export function WhyHaier() {
           </Stagger>
         </div>
 
-        {/* Haier credentials — dark inset, explicitly Haier's */}
+        {/* Haier credentials – dark inset, explicitly Haier's */}
         <Reveal>
           <div className="mt-14 rounded-3xl bg-brand-ink p-8 text-brand-bone shadow-ink md:p-10">
             <p className="font-medium text-[0.7rem] uppercase tracking-[0.2em] text-brand-fog">
-              Haier — the manufacturer behind the range
+              Haier – the manufacturer behind the range
             </p>
             <dl className="mt-6 grid gap-8 sm:grid-cols-3">
               {haierCredentials.map((c) => (

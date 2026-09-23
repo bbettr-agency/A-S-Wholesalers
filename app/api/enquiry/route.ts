@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 /**
- * Enquiry endpoint — REAL and integration-ready, not a fake backend.
+ * Enquiry endpoint – REAL and integration-ready, not a fake backend.
  *
  * • Validates the submission server-side.
  * • Forwards to GoHighLevel when GHL_WEBHOOK_URL is set (the production path).
@@ -76,8 +76,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: false, error: "forward_failed" }, { status: 502 });
     }
   } else {
-    // Demo mode — no webhook configured. Log for visibility; do not fabricate delivery.
-    console.info("[enquiry] received (demo mode — set GHL_WEBHOOK_URL to forward):", {
+    // Demo mode – no webhook configured. Log for visibility; do not fabricate delivery.
+    console.info("[enquiry] received (demo mode – set GHL_WEBHOOK_URL to forward):", {
       name: lead.name,
       email: lead.email,
       interest: lead.interest,

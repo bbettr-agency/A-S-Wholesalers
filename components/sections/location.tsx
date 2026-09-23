@@ -8,7 +8,7 @@ import { site, mapsLink } from "@/config/site";
 import { location } from "@/config/home";
 
 /**
- * Location — real NAP + hours, with a real (keyless) Google Maps embed of the
+ * Location – real NAP + hours, with a real (keyless) Google Maps embed of the
  * Centurion premises. No fabricated premises photo.
  */
 export function Location() {

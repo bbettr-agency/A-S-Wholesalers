@@ -7,7 +7,7 @@ import { supplier } from "@/config/home";
 import { supplierPoints } from "@/config/trust";
 
 /**
- * Why A&S — the supplier value, kept strictly distinct from Haier's credentials.
+ * Why A&S – the supplier value, kept strictly distinct from Haier's credentials.
  * No invented stats. Numbered like a datasheet (the ownable motif).
  */
 export function SupplierValue() {

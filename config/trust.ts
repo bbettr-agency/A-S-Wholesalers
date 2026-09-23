@@ -2,9 +2,9 @@
  * Trust configuration.
  *
  * TWO STRICTLY SEPARATED SETS:
- *  1. haierCredentials — belong to HAIER (the manufacturer). Verifiable, from the
+ *  1. haierCredentials – belong to HAIER (the manufacturer). Verifiable, from the
  *     supplied 2026 catalogue. Always rendered with explicit Haier attribution.
- *  2. supplierPoints — what A&S offers as the supplier. Stated factually. NO
+ *  2. supplierPoints – what A&S offers as the supplier. Stated factually. NO
  *     invented stats: no founding year, install counts, testimonials, ratings, or
  *     "authorised/official distributor" wording (none are verified).
  *
@@ -17,11 +17,11 @@ export interface Credential {
   source?: string;
 }
 
-/** Haier's own standing — the "why this product range" evidence. Attributed to Haier. */
+/** Haier's own standing – the "why this product range" evidence. Attributed to Haier. */
 export const haierCredentials: Credential[] = [
   {
     value: "No. 1",
-    label: "world's major appliances brand — 16 years running",
+    label: "world's major appliances brand – 16 years running",
     source: "Euromonitor International, 2008–2024",
   },
   {
@@ -36,11 +36,11 @@ export const haierCredentials: Credential[] = [
   },
 ];
 
-/** What A&S offers, stated as fact — the supplier value, distinct from Haier. */
+/** What A&S offers, stated as fact – the supplier value, distinct from Haier. */
 export const supplierPoints = [
   {
     title: "The full Haier range, one supplier",
-    body: "Wall-mounted, multi-split, ducted, cassette and solar — residential through to commercial — from a single point of contact.",
+    body: "Wall-mounted, multi-split, ducted, cassette and solar – residential through to commercial – from a single point of contact.",
   },
   {
     title: "Based in Centurion, Gauteng",
@@ -48,7 +48,7 @@ export const supplierPoints = [
   },
   {
     title: "The right unit for the space",
-    body: "Send us the room or the site and we'll point you to the model and capacity that fits — before you buy.",
+    body: "Send us the room or the site and we'll point you to the model and capacity that fits – before you buy.",
   },
 ] as const;
 

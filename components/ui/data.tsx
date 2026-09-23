@@ -2,12 +2,12 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * The datasheet motif — the ownable A&S signature. Model codes, capacities and
+ * The datasheet motif – the ownable A&S signature. Model codes, capacities and
  * dimension rules rendered as real spec data in monospace, lifted from the Haier
  * catalogue's own technical language.
  */
 
-/** ModelCode — a monospace model-number chip (e.g. ES09QF32I). */
+/** ModelCode – a monospace model-number chip (e.g. ES09QF32I). */
 export function ModelCode({ children, onDark }: { children: ReactNode; onDark?: boolean }) {
   return (
     <span
@@ -23,7 +23,7 @@ export function ModelCode({ children, onDark }: { children: ReactNode; onDark?: 
   );
 }
 
-/** DataChip — a labelled spec value (capacity, BTU, class). */
+/** DataChip – a labelled spec value (capacity, BTU, class). */
 export function DataChip({
   label,
   value,
@@ -54,7 +54,7 @@ export function DataChip({
 }
 
 /**
- * DimensionRule — a hairline "measurement" line with end ticks, echoing the
+ * DimensionRule – a hairline "measurement" line with end ticks, echoing the
  * datasheet dimension lines. Used as a restrained section-structure accent.
  */
 export function DimensionRule({ label, className, onDark }: { label?: string; className?: string; onDark?: boolean }) {

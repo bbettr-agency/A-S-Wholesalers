@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
   title: "Gallery",
-  description: "A&S Wholesalers project gallery — coming soon.",
+  description: "A&S Wholesalers project gallery – coming soon.",
   path: "/gallery",
   noindex: true,
 });

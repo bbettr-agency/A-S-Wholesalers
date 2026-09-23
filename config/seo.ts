@@ -1,5 +1,5 @@
 /**
- * SEO configuration — titles, descriptions and the keyword map that shaped the
+ * SEO configuration – titles, descriptions and the keyword map that shaped the
  * copy. Keywords are documented for architecture, not stuffed into visible copy.
  *
  * Home targets the transactional / commercial-investigation cluster for a Haier
@@ -12,7 +12,7 @@ export const seo = {
   titleDefault: "Haier Air Conditioning Supplier | A&S Wholesalers",
   titleTemplate: "%s | A&S Wholesalers",
   description:
-    "A&S Wholesalers supplies the full Haier air conditioning range — residential and commercial — from Centurion, Gauteng. Enquire online, WhatsApp or call.",
+    "A&S Wholesalers supplies the full Haier air conditioning range – residential and commercial – from Centurion, Gauteng. Enquire online, WhatsApp or call.",
   keywords: [
     "Haier air conditioning South Africa",
     "Haier air conditioners",

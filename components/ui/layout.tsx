@@ -1,7 +1,7 @@
 import type { ElementType, ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/** Container — 12-col field, max-w-7xl, token gutters. */
+/** Container – 12-col field, max-w-7xl, token gutters. */
 export function Container({
   children,
   className,
@@ -22,7 +22,7 @@ const toneClasses: Record<Tone, string> = {
   ink: "bg-brand-ink text-brand-bone",
 };
 
-/** Section — the tonal building block. Surface rhythm never repeats a tone twice. */
+/** Section – the tonal building block. Surface rhythm never repeats a tone twice. */
 export function Section({
   children,
   tone = "bone",

@@ -2,15 +2,15 @@ import { cn } from "@/lib/utils";
 import type { AirflowKind } from "@/config/products";
 
 /**
- * AirflowVisual — product-specific visualisation of how each Haier SYSTEM TYPE
+ * AirflowVisual – product-specific visualisation of how each Haier SYSTEM TYPE
  * moves air. Pure SVG + CSS (compositor-friendly); animation classes are applied
  * only when the stage is `active`, so inactive stages cost nothing. Decorative.
  *
- * wall — horizontal Coanda flow outward and down
- * solar — energy from the sun into the unit
- * multi — one outdoor node branching to several rooms
- * ducted — concealed air descending from a ceiling line
- * cassette — 360° radial airflow from the ceiling
+ * wall – horizontal Coanda flow outward and down
+ * solar – energy from the sun into the unit
+ * multi – one outdoor node branching to several rooms
+ * ducted – concealed air descending from a ceiling line
+ * cassette – 360° radial airflow from the ceiling
  */
 export function AirflowVisual({ kind, active }: { kind: AirflowKind; active: boolean }) {
   const flow = (base: string) => cn(base, active && "af-flow");
@@ -95,7 +95,7 @@ export function AirflowVisual({ kind, active }: { kind: AirflowKind; active: boo
     );
   }
 
-  // cassette — 360° radial
+  // cassette – 360° radial
   return (
     <svg className={common} viewBox="0 0 480 360" fill="none" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <g className="text-brand-steel" stroke="currentColor" fill="none">

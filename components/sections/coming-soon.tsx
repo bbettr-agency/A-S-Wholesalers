@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { CallButton, WhatsAppButton } from "@/components/funnel/channel-buttons";
 
 /**
- * ComingSoon — the honest placeholder for routes not yet built. It does NOT fake a
+ * ComingSoon – the honest placeholder for routes not yet built. It does NOT fake a
  * finished page; it states the page is in progress and routes to the live enquiry
  * and contact channels. These pages are noindex and excluded from the sitemap.
  */

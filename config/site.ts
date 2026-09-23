@@ -1,11 +1,11 @@
 /**
- * Site configuration — the single source of truth for A&S Wholesalers' identity,
+ * Site configuration – the single source of truth for A&S Wholesalers' identity,
  * NAP and conversion channels. No contact detail or business fact is hardcoded in
  * a component (OS config rule, SYSTEM/02).
  *
  * TRUTH DISCIPLINE: every value here is client-stated or confirmed. A&S has NOT
  * verified founding year, years of experience, install counts, testimonials,
- * certifications of its own, or "authorised/official distributor" status — so none
+ * certifications of its own, or "authorised/official distributor" status – so none
  * appear anywhere. Haier's credentials live in config/trust.ts, attributed to Haier.
  */
 
@@ -13,7 +13,7 @@ export const site = {
   name: "A&S Wholesalers",
   legalName: "A&S Wholesalers",
   descriptor: "Haier Air Conditioning", // from onboarding: "A&S Wholesalers Haier Hvac"
-  // Not yet live — placeholder production origin for canonical/OG/sitemap. Update at launch.
+  // Not yet live – placeholder production origin for canonical/OG/sitemap. Update at launch.
   url: "https://www.answholesalers.co.za",
   locale: "en-ZA",
   region: "Gauteng",
@@ -24,7 +24,7 @@ export const site = {
   // national distribution is NOT confirmed, so wording stays Centurion-based.
   tagline: "Haier air conditioning, supplied from Centurion.",
   shortDescription:
-    "A&S Wholesalers supplies the full Haier air conditioning range — residential and commercial — from Centurion, Gauteng.",
+    "A&S Wholesalers supplies the full Haier air conditioning range – residential and commercial – from Centurion, Gauteng.",
 
   contact: {
     phone: {
@@ -85,7 +85,7 @@ export function whatsappLink(message?: string): string {
 /** tel: link in international format. */
 export const telLink = `tel:${site.contact.phone.dial}`;
 
-/** Google Maps directions to the Centurion premises (address query — no invented geo). */
+/** Google Maps directions to the Centurion premises (address query – no invented geo). */
 export const mapsLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   site.address.mapsQuery,
 )}`;

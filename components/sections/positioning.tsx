@@ -5,8 +5,8 @@ import { Reveal } from "@/engine/motion";
 import { positioning } from "@/config/home";
 
 /**
- * Positioning band — answers "what is this?" in one confident statement. Compact,
- * tinted, centred — a deliberate rhythm break after the asymmetric hero.
+ * Positioning band – answers "what is this?" in one confident statement. Compact,
+ * tinted, centred – a deliberate rhythm break after the asymmetric hero.
  */
 export function Positioning() {
   return (

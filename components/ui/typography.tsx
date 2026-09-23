@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/** Eyebrow — caps, wide tracking. A label, never a heading. */
+/** Eyebrow – caps, wide tracking. A label, never a heading. */
 export function Eyebrow({
   children,
   onDark,
@@ -25,7 +25,7 @@ export function Eyebrow({
 }
 
 /**
- * SectionHeading — eyebrow → H2 → lead. Grouping is visible: eyebrow sits tight to
+ * SectionHeading – eyebrow → H2 → lead. Grouping is visible: eyebrow sits tight to
  * the heading, the lead a step further. One accent word max is handled by callers.
  */
 export function SectionHeading({
@@ -76,7 +76,7 @@ export function SectionHeading({
   );
 }
 
-/** Accent — the single accent-coloured span allowed once per heading. */
+/** Accent – the single accent-coloured span allowed once per heading. */
 export function Accent({ children }: { children: ReactNode }) {
   return <span className="text-brand-accent">{children}</span>;
 }

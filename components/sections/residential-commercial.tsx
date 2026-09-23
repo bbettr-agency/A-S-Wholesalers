@@ -13,9 +13,9 @@ const cards = [
 ];
 
 /**
- * Residential ↔ Commercial — proves the range serves both audiences. Split layout
+ * Residential ↔ Commercial – proves the range serves both audiences. Split layout
  * breaks the previous rhythm. Residential uses the real room photograph; commercial
- * uses the cassette render (no commercial-premises photo exists — honest imagery).
+ * uses the cassette render (no commercial-premises photo exists – honest imagery).
  */
 export function ResidentialCommercial() {
   return (
@@ -59,7 +59,7 @@ export function ResidentialCommercial() {
                       ))}
                     </ul>
                     <div className="mt-6 border-t border-brand-line pt-4">
-                      <EnquireLink interest={c.interest} label={`Enquire — ${c.tag.toLowerCase()}`} />
+                      <EnquireLink interest={c.interest} label={`Enquire – ${c.tag.toLowerCase()}`} />
                     </div>
                   </div>
                 </div>

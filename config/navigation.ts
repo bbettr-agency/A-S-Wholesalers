@@ -2,7 +2,7 @@
  * Navigation configuration.
  *
  * This is a HOMEPAGE-ONLY demo. Nav items point to real placeholder routes
- * (/products, /about, …) that exist as honest "in progress" pages — they are NOT
+ * (/products, /about, …) that exist as honest "in progress" pages – they are NOT
  * on-page anchors and they do NOT fake complete pages. Home is "/". The structure
  * anticipates the production pages built after client approval.
  *

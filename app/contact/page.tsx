@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description:
-    "Contact A&S Wholesalers — Haier air conditioning, Centurion, Gauteng. Call 012 323 2101, WhatsApp 065 815 1032, or send an enquiry.",
+    "Contact A&S Wholesalers – Haier air conditioning, Centurion, Gauteng. Call 012 323 2101, WhatsApp 065 815 1032, or send an enquiry.",
   path: "/contact",
   noindex: true,
 });

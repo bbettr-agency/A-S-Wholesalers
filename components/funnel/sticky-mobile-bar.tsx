@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { site, telLink, whatsappLink } from "@/config/site";
 
 /**
- * Sticky mobile CTA bar — the mobile hero's real conversion surface. Appears once
+ * Sticky mobile CTA bar – the mobile hero's real conversion surface. Appears once
  * the hero scrolls out; Call + WhatsApp minimum, plus the primary enquiry action.
  * Slides in via transform only; respects safe-area insets.
  */

@@ -1,5 +1,5 @@
 /**
- * Enquiry configuration — the primary conversion.
+ * Enquiry configuration – the primary conversion.
  *
  * The form is built for later GoHighLevel webhook integration (POST /api/enquiry
  * → GHL_WEBHOOK_URL). Fields map to what GHL needs plus attribution. No fake
@@ -25,7 +25,7 @@ export const interestOptions = [
   { value: "ducted", label: "Ducted" },
   { value: "cassette", label: "Cassette" },
   { value: "solar", label: "Solar" },
-  { value: "not-sure", label: "Not sure yet — need advice" },
+  { value: "not-sure", label: "Not sure yet – need advice" },
 ] as const;
 
 export const enquiryFields: EnquiryField[] = [
@@ -46,7 +46,7 @@ export const enquiryFields: EnquiryField[] = [
 export const enquiryCopy = {
   eyebrow: "Send an enquiry",
   heading: "Tell us the space. We'll point you to the unit.",
-  lead: "Residential or commercial — send the room, the site or the model you're after and we'll come back with the right Haier fit.",
+  lead: "Residential or commercial – send the room, the site or the model you're after and we'll come back with the right Haier fit.",
   submit: "Send enquiry",
   submitting: "Sending…",
   reassurance: "No obligation · We reply during business hours · Or reach us on WhatsApp",
@@ -54,7 +54,7 @@ export const enquiryCopy = {
     "By sending this enquiry you agree that A&S Wholesalers may contact you about your request (POPIA).",
   successHeading: "Enquiry received.",
   successBody:
-    "Thanks — we've got your details and we'll be in touch during business hours. Need us sooner? Message us on WhatsApp or call the branch.",
+    "Thanks – we've got your details and we'll be in touch during business hours. Need us sooner? Message us on WhatsApp or call the branch.",
   errorBody:
     "Something went wrong sending that. Please try again, or reach us directly on WhatsApp or by phone.",
 } as const;

@@ -10,9 +10,9 @@ import { PREFILL_EVENT } from "./enquiry-events";
 type Status = "idle" | "submitting" | "success" | "error";
 
 /**
- * EnquiryForm — the primary conversion. Built for later GHL webhook integration:
+ * EnquiryForm – the primary conversion. Built for later GHL webhook integration:
  * posts every field plus captured attribution to POST /api/enquiry. No fake email
- * backend — the endpoint validates and confirms (and forwards to GHL when the
+ * backend – the endpoint validates and confirms (and forwards to GHL when the
  * webhook env is configured). Honeypot + POPIA consent included.
  */
 export function EnquiryForm({ onDark = true }: { onDark?: boolean }) {
@@ -41,7 +41,7 @@ export function EnquiryForm({ onDark = true }: { onDark?: boolean }) {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
-    // Honeypot — if filled, silently succeed (bot).
+    // Honeypot – if filled, silently succeed (bot).
     if (data.company_url) {
       setStatus("success");
       return;

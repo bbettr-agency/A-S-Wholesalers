@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { prefillEnquiry } from "./enquiry-events";
 
 /**
- * EnquireLink — a context-aware enquiry trigger usable inside server components.
+ * EnquireLink – a context-aware enquiry trigger usable inside server components.
  * Pre-fills the form with a solution interest and scrolls to it.
  */
 export function EnquireLink({

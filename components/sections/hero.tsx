@@ -9,7 +9,7 @@ import { hero } from "@/config/home";
 import { heroProof } from "@/config/trust";
 
 /**
- * Hero — Capability archetype, executed light. Blocking Question: "is A&S a real
+ * Hero – Capability archetype, executed light. Blocking Question: "is A&S a real
  * SA supplier who stocks the full Haier range for my job, and how do I reach them?"
  * Left: category-clear H1 (the LCP, never animated) + proof + CTAs. Right: the
  * flagship product render as evidence, with datasheet data chips.
@@ -19,7 +19,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-brand-bone pt-32 md:pt-40">
-      {/* faint technical grid wash — structure, not decoration */}
+      {/* faint technical grid wash – structure, not decoration */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-[0.5] [background-image:linear-gradient(to_right,theme(colors.brand.line)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.brand.line)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:radial-gradient(120%_90%_at_80%_0%,black,transparent_70%)]"
@@ -63,14 +63,14 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Evidence column — the product render */}
+          {/* Evidence column – the product render */}
           <div className="relative">
             <div className="relative rounded-3xl bg-gradient-to-b from-brand-mist to-brand-bone p-6 ring-1 ring-brand-line sm:p-8">
               <DimensionRule label="Aeropure Inverter" />
               <div className="relative mt-4 aspect-[4/3]">
                 <Image
                   src="/images/products/haier-aeropure.jpg"
-                  alt="Haier Aeropure Inverter — black-glass wall-mounted split with outdoor condenser unit, supplied by A&S Wholesalers"
+                  alt="Haier Aeropure Inverter – black-glass wall-mounted split with outdoor condenser unit, supplied by A&S Wholesalers"
                   fill
                   priority
                   sizes="(max-width: 1024px) 90vw, 640px"

@@ -16,7 +16,7 @@ import { prefillEnquiry } from "@/components/funnel/enquiry-events";
 const STAGE_VH = 82; // scroll length per system stage (desktop pinned)
 
 /**
- * AirflowGallery — the signature Haier system experience. Replaces the old product
+ * AirflowGallery – the signature Haier system experience. Replaces the old product
  * card grid. Desktop: a scroll-pinned stage that transitions between the five
  * SYSTEM TYPES, each with its own airflow visualisation. Mobile / no-JS / reduced
  * data: stacked editorial stages (never nine generic cards). A restrained
@@ -103,17 +103,17 @@ export function AirflowGallery() {
         </div>
       ) : (
         <Container>
-          <div className="mt-10 space-y-6">
-            {systemStages.map((s) => (
+          <div className="mt-6">
+            {systemStages.map((s, i) => (
               <Reveal key={s.key} preset="fadeUp">
-                <StackedStage stage={s} />
+                <StackedStage stage={s} first={i === 0} />
               </Reveal>
             ))}
           </div>
         </Container>
       )}
 
-      {/* Full-catalogue index — restrained utility, not nine giant cards */}
+      {/* Full-catalogue index – restrained utility, not nine giant cards */}
       <Container>
         <ExploreIndex />
       </Container>
@@ -201,7 +201,7 @@ function StageCopy({ stage }: { stage: SystemStage }) {
           data-cta="enquire-context"
           className="group inline-flex h-12 items-center gap-2 rounded-lg bg-brand-ink px-6 text-sm font-semibold text-brand-bone transition-transform duration-200 ease-brand hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-state-focus active:translate-y-px"
         >
-          Enquire — {stage.type.toLowerCase()}
+          Enquire – {stage.type.toLowerCase()}
           <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-brand group-hover:translate-x-1" />
         </button>
         <span className="text-sm text-brand-steel">
@@ -212,33 +212,47 @@ function StageCopy({ stage }: { stage: SystemStage }) {
   );
 }
 
-/* ── Shared: the product stage with airflow ── */
-function StageStage({ stage, active }: { stage: SystemStage; active: boolean }) {
+/* ── Shared: the product stage with airflow ──
+   No card / ring / inner canvas – the PRODUCT is the object. It sits on the stage
+   with a soft depth glow (not a bordered box); airflow radiates around it. The
+   enhanced white-background renders merge into the bone surface. */
+function StageStage({ stage, active, priority }: { stage: SystemStage; active: boolean; priority?: boolean }) {
   return (
     <div className="relative">
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-gradient-to-b from-brand-mist via-brand-bone to-brand-bone ring-1 ring-brand-line">
-        <AirflowVisual kind={stage.key} active={active} />
+      <div className="relative aspect-[16/11] w-full">
+        {/* soft radial depth – gives the product ground without a box */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 [background:radial-gradient(58%_54%_at_50%_46%,rgba(27,42,74,0.06),transparent_70%)]"
+        />
         <Image
           src={stage.image}
           alt={stage.imageAlt}
           fill
-          sizes="(max-width: 1024px) 92vw, 640px"
-          className="object-contain p-6 md:p-10"
+          priority={priority}
+          sizes="(max-width: 640px) 94vw, (max-width: 1024px) 90vw, 720px"
+          quality={88}
+          className="object-contain"
         />
-        <span className="absolute bottom-4 left-5 text-xs font-medium uppercase tracking-[0.18em] text-brand-steel">
-          Airflow — {stage.type}
-        </span>
+        {/* airflow sits over the product (white renders are opaque), reading as air
+            leaving the unit rather than a graphic behind a card */}
+        <AirflowVisual kind={stage.key} active={active} />
+      </div>
+      <div className="mt-3 flex items-center justify-center gap-3">
+        <span className="h-px w-8 bg-brand-line" aria-hidden="true" />
+        <span className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-brand-steel">Airflow – {stage.type}</span>
+        <span className="h-px w-8 bg-brand-line" aria-hidden="true" />
       </div>
     </div>
   );
 }
 
-/* ── Mobile / no-JS: stacked editorial stage ── */
-function StackedStage({ stage }: { stage: SystemStage }) {
+/* ── Mobile / no-JS: stacked editorial stage (no card – product-led) ── */
+function StackedStage({ stage, first }: { stage: SystemStage; first?: boolean }) {
   return (
-    <div className="overflow-hidden rounded-3xl bg-white ring-1 ring-brand-line">
-      <StageStage stage={stage} active />
-      <div className="p-6">
+    <div className={cn("pt-10", !first && "border-t border-brand-line")}>
+      <StageStage stage={stage} active priority={first} />
+      <div className="mt-6">
         <StageCopy stage={stage} />
       </div>
     </div>
