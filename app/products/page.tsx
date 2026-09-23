@@ -14,7 +14,7 @@ export default function ProductsPage() {
   return (
     <ComingSoon
       title="The full Haier range"
-      blurb="We're building out the complete catalogue – every family, model code, capacity and datasheet. In the meantime, tell us the space and we'll point you to the right unit."
+      blurb="We're building out the complete catalogue – every family, model code, capacity and datasheet. In the meantime, start a trade enquiry and we'll talk you through the range."
     />
   );
 }

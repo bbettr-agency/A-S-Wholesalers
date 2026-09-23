@@ -109,20 +109,24 @@ export function EnquiryForm({ onDark = true }: { onDark?: boolean }) {
 
       <div className="grid gap-4 sm:grid-cols-2">
         {enquiryFields.map((f) => {
-          const isFull = f.type === "textarea" || f.type === "select";
+          const full = f.full === true;
           if (f.type === "select") {
+            // The interest select is controlled so any CTA can pre-fill it; other
+            // selects (business type) are uncontrolled with their own options.
+            const isInterest = f.name === "interest";
             return (
-              <div key={f.name} className={cn(isFull && "sm:col-span-2")}>
+              <div key={f.name} className={cn(full && "sm:col-span-2")}>
                 <label htmlFor={f.name} className={labelBase}>{f.label}</label>
                 <select
                   id={f.name}
                   name={f.name}
-                  ref={interestRef}
-                  value={interest}
-                  onChange={(e) => setInterest(e.target.value)}
+                  required={f.required}
                   className={inputBase}
+                  {...(isInterest
+                    ? { ref: interestRef, value: interest, onChange: (e: React.ChangeEvent<HTMLSelectElement>) => setInterest(e.target.value) }
+                    : { defaultValue: "" })}
                 >
-                  {interestOptions.map((o) => (
+                  {(isInterest ? interestOptions : f.options ?? []).map((o) => (
                     <option key={o.value} value={o.value}>{o.label}</option>
                   ))}
                 </select>
@@ -131,7 +135,7 @@ export function EnquiryForm({ onDark = true }: { onDark?: boolean }) {
           }
           if (f.type === "textarea") {
             return (
-              <div key={f.name} className="sm:col-span-2">
+              <div key={f.name} className={cn(full ? "sm:col-span-2" : undefined)}>
                 <label htmlFor={f.name} className={labelBase}>{f.label}</label>
                 <textarea
                   id={f.name}
@@ -145,7 +149,7 @@ export function EnquiryForm({ onDark = true }: { onDark?: boolean }) {
             );
           }
           return (
-            <div key={f.name}>
+            <div key={f.name} className={cn(full && "sm:col-span-2")}>
               <label htmlFor={f.name} className={labelBase}>{f.label}</label>
               <input
                 id={f.name}

@@ -36,25 +36,25 @@ export const haierCredentials: Credential[] = [
   },
 ];
 
-/** What A&S offers, stated as fact – the supplier value, distinct from Haier. */
+/** What A&S offers the trade, stated as fact – distinct from Haier. */
 export const supplierPoints = [
   {
-    title: "The full Haier range, one supplier",
-    body: "Wall-mounted, multi-split, ducted, cassette and solar – residential through to commercial – from a single point of contact.",
+    title: "The full Haier range, one wholesaler",
+    body: "Wall-mounted, multi-split, ducted, cassette and solar – residential through to commercial – sourced from a single supplier.",
   },
   {
     title: "Based in Centurion, Gauteng",
     body: "Stocked and supplied from Icon Industrial Park in Sunderland Ridge, Centurion.",
   },
   {
-    title: "The right unit for the space",
-    body: "Send us the room or the site and we'll point you to the model and capacity that fits – before you buy.",
+    title: "Product know-how behind the range",
+    body: "Tell us the customer or the project and we'll point you to the Haier model and capacity that fits – so you can quote with confidence.",
   },
 ] as const;
 
-/** Compact capability strip used in-hero (all factual, no numbers invented). */
+/** Compact proof strip used in-hero (all factual, no numbers invented). */
 export const heroProof: { label: string }[] = [
   { label: "The complete Haier range" },
-  { label: "Residential & commercial" },
-  { label: "Supplied from Centurion" },
+  { label: "For retailers & resellers" },
+  { label: "Distributed from Centurion" },
 ];

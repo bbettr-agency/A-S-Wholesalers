@@ -106,7 +106,7 @@ export function Header() {
               <CallButton size="md" variant="ghost" />
             </span>
             <Button href="#enquire" variant="primary" size="md">
-              Send an enquiry
+              Trade enquiry
             </Button>
           </div>
 
@@ -159,7 +159,7 @@ export function Header() {
           </ul>
           <div className="mt-6 grid gap-3">
             <Button href="#enquire" variant="primary" size="lg" fullWidth onClick={() => setOpen(false)}>
-              Send an enquiry
+              Trade enquiry
             </Button>
             <div className="grid grid-cols-2 gap-3">
               <a

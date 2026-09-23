@@ -23,7 +23,7 @@ export function ComingSoon({ title, blurb }: { title: string; blurb: string }) {
           <p className="mt-5 max-w-prose text-lg leading-relaxed text-brand-graphite">{blurb}</p>
           <DimensionRule className="mt-8 max-w-md" label="Coming soon" />
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="/#enquire" variant="primary" size="lg">Send an enquiry</Button>
+            <Button href="/#enquire" variant="primary" size="lg">Start a trade enquiry</Button>
             <WhatsAppButton size="lg" />
             <CallButton size="lg" />
           </div>

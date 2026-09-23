@@ -1,19 +1,28 @@
 /**
  * Home page copy – the narrative. Every section's copy lives here so components
- * carry no hardcoded strings (OS config rule). Written in A&S's plain register:
- * specific, no filler ("solutions", "cutting-edge", "we pride ourselves"), and no
- * unverified A&S claim. Haier facts are marked as Haier's.
+ * carry no hardcoded strings (OS config rule).
+ *
+ * POSITIONING (owner feedback, 2026): A&S is the WHOLESALE DISTRIBUTOR of Haier
+ * air conditioning. The audience is trade – independent retailers, resellers and
+ * trade businesses that want to STOCK and SUPPLY Haier to their own customers –
+ * not individual homeowners buying one unit. The site stays highly informational
+ * about the Haier range; the commercial objective is larger trade enquiries.
+ *
+ * Confirmed facts only: A&S distributes/wholesales Haier from Centurion and works
+ * with trade partners. NOT stated (unconfirmed): MOQ, trade pricing, dealer
+ * discounts, exclusivity, credit, nationwide delivery, "authorised/official
+ * distributor". Haier facts stay attributed to Haier.
  */
 
 export const hero = {
-  eyebrow: "The Haier air conditioning specialists",
-  // H1: entity + category + location (Centurion is confirmed; national reach is NOT
-  // – so the headline stays factually Centurion-based). Accent on the key word.
+  eyebrow: "The Haier air conditioning wholesaler",
+  // H1: entity + category + the commercial position (supplied to the trade). Accent
+  // keeps the approved red emphasis on "supplied". Centurion carried in the sub.
   headline: "Haier air conditioning,",
   headlineAccent: "supplied",
-  headlineRest: "from Centurion.",
-  sub: "A&S Wholesalers stocks the complete Haier range – wall-mounted, multi-split, ducted, cassette and solar – for homes and businesses. Enquire from our branch in Centurion, Gauteng.",
-  primaryCta: { label: "Send an enquiry", href: "#enquire" },
+  headlineRest: "to the trade.",
+  sub: "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion – for independent retailers, resellers and installers looking to stock and supply Haier to their own customers.",
+  primaryCta: { label: "Enquire about stocking Haier", href: "#enquire" },
   secondaryCta: { label: "See the range", href: "#range" },
   // Floating data chips on the hero product render (datasheet motif).
   productChips: ["9,000 – 24,000 BTU", "R32 inverter", "ES09–24QF32I"],
@@ -22,20 +31,20 @@ export const hero = {
 
 export const positioning = {
   eyebrow: "Who we are",
-  heading: "A Haier air conditioning supply house.",
-  body: "A&S Wholesalers distributes Haier air conditioning across South Africa. One range, residential to commercial – and straight answers on which unit fits the space.",
+  heading: "A Haier air conditioning wholesaler.",
+  body: "A&S distributes the full Haier air-conditioning range from Centurion. We work with independent retailers, resellers and trade businesses looking to stock and supply Haier to their own customers.",
 };
 
 export const range = {
-  eyebrow: "Find your fit",
-  heading: "Which air conditioner do you actually need?",
-  lead: "Five ways to cool a space. Pick the one that matches yours – we'll show the Haier families that fit, and take it from there.",
+  eyebrow: "Match the range",
+  heading: "Which Haier ranges fit your customers?",
+  lead: "Different customers, different systems. Explore the five Haier categories A&S supplies – and the ranges that fit what your customers are asking for.",
 };
 
 export const whyHaier = {
   eyebrow: "Why Haier",
   heading: "Engineered for efficiency, clean air and unstable supply.",
-  lead: "Everything A&S supplies is Haier – by Euromonitor's count, the world's number-one major-appliance brand for 16 years running. That engineering is what you're buying.",
+  lead: "Everything A&S supplies is Haier – by Euromonitor's count, the world's number-one major-appliance brand for 16 years running. That engineering is what your customers get.",
   pillars: [
     {
       title: "Full-inverter efficiency",
@@ -57,25 +66,25 @@ export const whyHaier = {
 };
 
 export const products = {
-  // The immersive Airflow Gallery – a demonstration of how each SYSTEM TYPE moves
-  // air (distinct from the quick finder above, which answers "which do I need?").
+  // The immersive Airflow Gallery – a demonstration of the Haier ranges A&S can
+  // supply, and how each system type works. Informative for trade buyers.
   eyebrow: "The systems, shown",
   heading: "See how each Haier system moves air.",
-  lead: "Five system types, five ways of delivering air – from a wall split to a 360° ceiling cassette. Scroll through the range.",
+  lead: "Five system types, five ways of delivering air – the full spread of Haier ranges you can source through A&S. Scroll through them.",
   scrollHint: "Scroll to move through the systems",
   exploreEyebrow: "The full catalogue",
   exploreHeading: "Explore all nine Haier ranges",
-  exploreLead: "Every family we supply, with capacities and model codes. Enquire on any of them now.",
+  exploreLead: "Every Haier family A&S supplies, with capacities and model codes – the depth of range you can offer your customers.",
 };
 
 export const resiComm = {
   eyebrow: "Where it goes",
   heading: "For the home. And for the business.",
-  lead: "The same range covers both – we help you match the unit type to the space.",
+  lead: "One range, both markets – residential for homes and apartments, commercial for shops, offices and larger sites. Source what your customers need from A&S.",
   residential: {
     tag: "Residential",
     title: "Homes & apartments",
-    body: "Quiet wall splits for bedrooms and living areas, multi-split to run several rooms off one outdoor unit, and slim ducted where you want the units out of sight.",
+    body: "Quiet wall splits, multi-split to run several rooms off one outdoor unit, and slim ducted for a concealed finish – the residential ranges your customers ask for most.",
     types: ["Wall-mounted split", "Multi-split", "Slim ducted", "Solar"],
     image: "/images/lifestyle/room-beige.jpg",
     imageAlt: "A Haier wall-mounted split air conditioner installed above a sofa in a modern living room",
@@ -84,7 +93,7 @@ export const resiComm = {
   commercial: {
     tag: "Commercial",
     title: "Shops, offices & commercial",
-    body: "Ceiling cassettes for even airflow across an open floor, medium-static ducted for larger areas, and multi-split where you're cooling a run of rooms.",
+    body: "Ceiling cassettes for even airflow across an open floor, medium-static ducted for larger areas, and multi-split for a run of rooms – the commercial ranges for your project work.",
     types: ["Cassette", "Ducted", "Multi-split"],
     // No commercial-premises photo exists – we use the commercial cassette render
     // rather than implying an interior we can't show. A real shoot is a follow-up.
@@ -96,12 +105,12 @@ export const resiComm = {
 
 export const supplier = {
   eyebrow: "Why A&S",
-  heading: "One supplier for the whole Haier range.",
-  lead: "Instead of chasing units across five sellers, get the range, the specs and the right fit from one branch in Centurion.",
+  heading: "One wholesaler for the whole Haier range.",
+  lead: "Source the entire Haier air-conditioning range from one Centurion wholesaler – wall splits through to commercial cassettes, one point of contact for your business.",
 };
 
 export const location = {
   eyebrow: "Find us",
   heading: "Supplied from Centurion, Gauteng.",
-  body: "Stocked and supplied from Icon Industrial Park in Sunderland Ridge. Send an enquiry, message us on WhatsApp, or call the branch during business hours.",
+  body: "Stocked and supplied from our branch at Icon Industrial Park in Sunderland Ridge. Start a trade enquiry, message us on WhatsApp, or call during business hours.",
 };

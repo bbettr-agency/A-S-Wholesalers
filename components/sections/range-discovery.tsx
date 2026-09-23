@@ -45,7 +45,7 @@ export function RangeDiscovery() {
         <SectionHeading eyebrow={range.eyebrow} heading={range.heading} lead={range.lead} maxWidth="max-w-2xl" />
 
         {/* Selectors – the control */}
-        <div role="tablist" aria-label="Air conditioning types" className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        <div role="tablist" aria-label="Haier air conditioning ranges" className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {solutions.map((s) => {
             const Icon = ICONS[s.type];
             const selected = s.type === active;
@@ -122,7 +122,7 @@ export function RangeDiscovery() {
                 data-cta="enquire-context"
                 className="group inline-flex h-12 max-w-full items-center justify-center gap-2 whitespace-nowrap rounded-lg bg-brand-accent px-7 text-sm font-semibold text-white shadow-accent transition-transform duration-200 ease-brand hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-state-focus active:translate-y-px"
               >
-                Enquire about {activeSolution.label.toLowerCase()}
+                Enquire about this range
                 <ArrowRight className="h-4 w-4 shrink-0 transition-transform duration-200 ease-brand group-hover:translate-x-1" />
               </button>
             </div>

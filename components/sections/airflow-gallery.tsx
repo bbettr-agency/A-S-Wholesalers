@@ -201,7 +201,7 @@ function StageCopy({ stage }: { stage: SystemStage }) {
           data-cta="enquire-context"
           className="group inline-flex h-12 items-center gap-2 rounded-lg bg-brand-ink px-6 text-sm font-semibold text-brand-bone transition-transform duration-200 ease-brand hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-state-focus active:translate-y-px"
         >
-          Enquire – {stage.type.toLowerCase()}
+          Enquire about this range
           <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-brand group-hover:translate-x-1" />
         </button>
         <span className="text-sm text-brand-steel">

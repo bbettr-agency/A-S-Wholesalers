@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { site } from "@/config/site";
 
 export const runtime = "edge";
-export const alt = "A&S Wholesalers – Haier air conditioning, supplied from Centurion";
+export const alt = "A&S Wholesalers – Haier air conditioning, supplied to the trade";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -41,10 +41,10 @@ export default function OgImage() {
             }}
           >
             Haier air conditioning,{" "}
-            <span style={{ color: "#F04858" }}>supplied</span> from Centurion.
+            <span style={{ color: "#F04858" }}>supplied</span> to the trade.
           </div>
           <div style={{ marginTop: 26, color: "#AEB7C6", fontSize: 28 }}>
-            Wall-mounted · Multi-split · Ducted · Cassette · Solar
+            Wholesale distribution · Retailers · Resellers · Installers
           </div>
         </div>
 

@@ -19,7 +19,7 @@ export function SupplierValue() {
             <div>
               <SectionHeading eyebrow={supplier.eyebrow} heading={supplier.heading} lead={supplier.lead} maxWidth="max-w-md" />
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="#enquire" variant="primary" size="md">Send an enquiry</Button>
+                <Button href="#enquire" variant="primary" size="md">Start a trade enquiry</Button>
                 <WhatsAppButton />
               </div>
             </div>

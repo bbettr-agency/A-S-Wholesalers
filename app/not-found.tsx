@@ -19,7 +19,7 @@ export default function NotFound() {
             <Button href="/" variant="primary" size="lg" leadingIcon={<ArrowLeft className="h-4 w-4" />}>
               Back to home
             </Button>
-            <Button href="/#enquire" variant="secondary" size="lg">Send an enquiry</Button>
+            <Button href="/#enquire" variant="secondary" size="lg">Trade enquiry</Button>
           </div>
         </div>
       </Container>

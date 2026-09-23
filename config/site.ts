@@ -12,7 +12,7 @@
 export const site = {
   name: "A&S Wholesalers",
   legalName: "A&S Wholesalers",
-  descriptor: "Haier Air Conditioning", // from onboarding: "A&S Wholesalers Haier Hvac"
+  descriptor: "Haier Air Conditioning Wholesaler", // from onboarding: "A&S Wholesalers Haier Hvac"
   // Not yet live – placeholder production origin for canonical/OG/sitemap. Update at launch.
   url: "https://www.answholesalers.co.za",
   locale: "en-ZA",
@@ -20,11 +20,11 @@ export const site = {
   country: "South Africa",
   countryCode: "ZA",
 
-  // What A&S does, in the client's own words (onboarding). Centurion is confirmed;
-  // national distribution is NOT confirmed, so wording stays Centurion-based.
-  tagline: "Haier air conditioning, supplied from Centurion.",
+  // Owner-confirmed positioning: A&S is the wholesale distributor of Haier, working
+  // with trade partners. Centurion confirmed; national reach NOT confirmed.
+  tagline: "Haier air conditioning, supplied to the trade.",
   shortDescription:
-    "A&S Wholesalers supplies the full Haier air conditioning range – residential and commercial – from Centurion, Gauteng.",
+    "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion, Gauteng – supplying independent retailers, resellers and trade partners looking to stock Haier.",
 
   contact: {
     phone: {
@@ -36,7 +36,7 @@ export const site = {
       // wa.me requires international format without the leading 0 or +.
       number: "27658151032",
       defaultMessage:
-        "Hi A&S Wholesalers, I'd like to enquire about Haier air conditioning.",
+        "Hi A&S Wholesalers, I'm a trade customer interested in stocking Haier air conditioning.",
     },
     email: {
       primary: "haier@answholesalers.co.za",

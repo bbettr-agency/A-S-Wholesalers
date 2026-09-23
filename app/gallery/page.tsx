@@ -13,7 +13,7 @@ export default function GalleryPage() {
   return (
     <ComingSoon
       title="Projects & gallery"
-      blurb="Installations and projects will be showcased here. Have a space in mind? Send us the details and we'll get you the right Haier unit."
+      blurb="Installations and projects will be showcased here. Stocking Haier and want to see it in the field? Start a trade enquiry and we'll help."
     />
   );
 }

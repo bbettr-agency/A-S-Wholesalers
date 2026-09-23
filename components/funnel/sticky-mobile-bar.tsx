@@ -46,7 +46,7 @@ export function StickyMobileBar() {
           data-cta="enquire"
           className="inline-flex h-12 flex-[1.4] items-center justify-center rounded-lg bg-brand-accent text-sm font-semibold text-white shadow-accent"
         >
-          Send enquiry
+          Trade enquiry
         </a>
       </div>
     </div>

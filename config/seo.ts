@@ -9,35 +9,41 @@
 import { site } from "./site";
 
 export const seo = {
-  titleDefault: "Haier Air Conditioning Supplier | A&S Wholesalers",
+  titleDefault: "Haier Air Conditioning Wholesaler | A&S Wholesalers",
   titleTemplate: "%s | A&S Wholesalers",
   description:
-    "A&S Wholesalers supplies the full Haier air conditioning range – residential and commercial – from Centurion, Gauteng. Enquire online, WhatsApp or call.",
+    "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion, Gauteng – for retailers, resellers and trade partners looking to stock Haier.",
   keywords: [
-    "Haier air conditioning South Africa",
-    "Haier air conditioners",
-    "Haier aircon supplier",
-    "air conditioning supplier Centurion",
-    "aircon supplier Pretoria",
+    // Commercial / trade intent (primary under the wholesale positioning)
+    "Haier air conditioning wholesaler",
+    "Haier air conditioning supplier",
+    "Haier aircon distributor",
     "air conditioning wholesaler",
-    "inverter air conditioner",
-    "ducted air conditioning",
-    "cassette air conditioner",
-    "multi split air conditioner",
-    "solar air conditioner",
-    "commercial air conditioning",
-    "residential air conditioning",
+    "aircon wholesaler",
+    "HVAC wholesaler",
+    "air conditioning distributor South Africa",
+    "wholesale air conditioners",
+    "trade air conditioning supplier",
+    "air conditioning supplier for installers",
+    "Haier air conditioning Centurion",
+    // Product / category discovery (organic reach)
+    "Haier wall mounted air conditioners",
+    "Haier ducted air conditioning",
+    "Haier cassette air conditioning",
+    "Haier multi split systems",
+    "Haier solar air conditioning",
+    "Haier inverter air conditioner",
   ],
   // Home page primary cluster (for reference / future keyword map).
   homeCluster: {
-    primary: "Haier air conditioning supplier",
+    primary: "Haier air conditioning wholesaler",
     supporting: [
-      "Haier aircon South Africa",
-      "air conditioning supplier Centurion",
-      "aircon Pretoria",
-      "residential and commercial air conditioning",
+      "air conditioning distributor",
+      "aircon wholesaler / HVAC supplier",
+      "trade air conditioning supplier Centurion",
+      "stock Haier air conditioning",
     ],
-    intent: "transactional / commercial-investigation",
+    intent: "wholesale / trade / commercial-investigation",
   },
   og: {
     type: "website" as const,

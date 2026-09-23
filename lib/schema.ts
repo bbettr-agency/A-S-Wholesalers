@@ -34,7 +34,9 @@ export function localBusinessSchema() {
     brand: { "@type": "Brand", name: "Haier" },
     slogan: site.tagline,
     knowsAbout: [
-      "Haier air conditioning",
+      "Haier air conditioning wholesale",
+      "Air conditioning distribution",
+      "Trade supply of air conditioning",
       "Inverter air conditioners",
       "Ducted air conditioning",
       "Cassette air conditioners",
