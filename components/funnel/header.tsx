@@ -3,33 +3,42 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, ChevronDown } from "lucide-react";
 import { useScrollPast, THRESHOLD } from "@/engine/motion";
 import { cn } from "@/lib/utils";
 import { site, telLink, whatsappLink } from "@/config/site";
-import { primaryNav } from "@/config/navigation";
+import { primaryNav, rangeMega } from "@/config/navigation";
 import { Button } from "@/components/ui/button";
 import { CallButton } from "./channel-buttons";
 
 /**
- * Header – substantial at the top (utility strip + full bar), transforms to a
- * condensed sticky bar on scroll (background, blur, shadow, height). Never animates
- * height/padding via Motion – CSS transition on transform/opacity/colour only.
+ * Header – substantial at the top (utility strip + full bar), condenses on scroll.
+ * "Haier Range" opens a mega-menu (desktop) / accordion (mobile) built from the
+ * catalogue. Real routes; never animates height/padding via Motion.
  */
 export function Header() {
   const scrolled = useScrollPast(THRESHOLD.header);
   const [open, setOpen] = useState(false);
+  const [mega, setMega] = useState(false);
+  const [mobileRange, setMobileRange] = useState(false);
 
-  // Lock body scroll + close on Escape when the mobile menu is open.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setMega(false);
+      setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // Lock body scroll while the mobile menu is open.
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
-    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
-      window.removeEventListener("keydown", onKey);
     };
   }, [open]);
 
@@ -49,13 +58,7 @@ export function Header() {
               <Phone className="h-3.5 w-3.5" aria-hidden="true" />
               {site.contact.phone.label}
             </a>
-            <a
-              href={whatsappLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 transition-colors hover:text-brand-bone"
-              data-cta="whatsapp"
-            >
+            <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 transition-colors hover:text-brand-bone" data-cta="whatsapp">
               <MessageCircle className="h-3.5 w-3.5" aria-hidden="true" />
               {site.contact.whatsapp.label}
             </a>
@@ -65,10 +68,11 @@ export function Header() {
 
       {/* Main bar */}
       <div
+        onMouseLeave={() => setMega(false)}
         className={cn(
           "relative z-50 transition-[background-color,box-shadow,backdrop-filter,border-color] duration-300 ease-brand",
-          scrolled
-            ? "border-b border-brand-line bg-brand-bone/85 shadow-lift backdrop-blur-md"
+          scrolled || mega
+            ? "border-b border-brand-line bg-brand-bone/95 shadow-lift backdrop-blur-md"
             : "border-b border-transparent bg-brand-bone/60 backdrop-blur-sm",
         )}
       >
@@ -86,26 +90,39 @@ export function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
-            {primaryNav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group relative rounded-md px-3 py-2 text-sm font-medium text-brand-graphite transition-colors hover:text-brand-primary"
-              >
-                {item.label}
-                {item.status === "soon" ? (
-                  <span className="ml-1 align-super font-medium text-[0.55rem] uppercase tracking-wider text-brand-steel">soon</span>
-                ) : null}
-                <span className="absolute inset-x-3 -bottom-px h-px scale-x-0 bg-brand-accent transition-transform duration-200 ease-brand group-hover:scale-x-100" />
-              </Link>
-            ))}
+            {primaryNav.map((item) =>
+              item.mega ? (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onMouseEnter={() => setMega(true)}
+                  onFocus={() => setMega(true)}
+                  aria-expanded={mega}
+                  className="group relative inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-brand-graphite transition-colors hover:text-brand-primary"
+                >
+                  {item.label}
+                  <ChevronDown className={cn("h-3.5 w-3.5 transition-transform duration-200 ease-brand", mega && "rotate-180")} aria-hidden="true" />
+                  <span className="absolute inset-x-3 -bottom-px h-px scale-x-0 bg-brand-accent transition-transform duration-200 ease-brand group-hover:scale-x-100" />
+                </Link>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onMouseEnter={() => setMega(false)}
+                  className="group relative rounded-md px-3 py-2 text-sm font-medium text-brand-graphite transition-colors hover:text-brand-primary"
+                >
+                  {item.label}
+                  <span className="absolute inset-x-3 -bottom-px h-px scale-x-0 bg-brand-accent transition-transform duration-200 ease-brand group-hover:scale-x-100" />
+                </Link>
+              ),
+            )}
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
             <span className="hidden whitespace-nowrap xl:inline-flex">
               <CallButton size="md" variant="ghost" />
             </span>
-            <Button href="#enquire" variant="primary" size="md">
+            <Button href="/contact#enquire" variant="primary" size="md">
               Trade enquiry
             </Button>
           </div>
@@ -122,60 +139,93 @@ export function Header() {
             {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
+
+        {/* Desktop mega-menu */}
+        <div
+          className={cn(
+            "absolute inset-x-0 top-full hidden origin-top border-b border-brand-line bg-brand-bone shadow-card transition-[opacity,transform] duration-200 ease-brand lg:block",
+            mega ? "visible opacity-100 translate-y-0" : "pointer-events-none invisible -translate-y-1 opacity-0",
+          )}
+          onMouseEnter={() => setMega(true)}
+        >
+          <div className="mx-auto grid max-w-7xl grid-cols-5 gap-6 px-6 py-8 lg:px-8">
+            {rangeMega.map((col) => (
+              <div key={col.label}>
+                <Link href={col.categoryHref} onClick={() => setMega(false)} className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-steel transition-colors hover:text-brand-primary">
+                  {col.label}
+                </Link>
+                <ul className="mt-3 space-y-2">
+                  {col.ranges.map((r) => (
+                    <li key={r.href}>
+                      <Link href={r.href} onClick={() => setMega(false)} className="block text-sm font-medium text-brand-graphite transition-colors hover:text-brand-accent">
+                        {r.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Mobile menu overlay */}
-      <div
-        id="mobile-menu"
-        hidden={!open}
-        className="lg:hidden"
-      >
-        <button
-          type="button"
-          aria-label="Close menu"
-          tabIndex={-1}
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 z-40 bg-brand-ink/40 backdrop-blur-sm motion-safe:animate-[fadeIn_.2s_ease]"
-        />
-        <nav
-          aria-label="Mobile"
-          className="fixed inset-x-0 top-0 z-40 mt-[env(safe-area-inset-top)] rounded-b-3xl bg-brand-bone px-6 pb-8 pt-24 shadow-card"
-        >
+      <div id="mobile-menu" hidden={!open} className="lg:hidden">
+        <button type="button" aria-label="Close menu" tabIndex={-1} onClick={() => setOpen(false)} className="fixed inset-0 z-40 bg-brand-ink/40 backdrop-blur-sm motion-safe:animate-[fadeIn_.2s_ease]" />
+        <nav aria-label="Mobile" className="fixed inset-x-0 top-0 z-40 mt-[env(safe-area-inset-top)] max-h-[100svh] overflow-y-auto rounded-b-3xl bg-brand-bone px-6 pb-8 pt-24 shadow-card">
           <ul className="divide-y divide-brand-line">
-            {primaryNav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className="flex items-center justify-between py-4 font-display text-lg font-semibold text-brand-ink"
-                >
-                  {item.label}
-                  {item.status === "soon" ? (
-                    <span className="font-medium text-[0.6rem] uppercase tracking-wider text-brand-steel">soon</span>
+            {primaryNav.map((item) =>
+              item.mega ? (
+                <li key={item.href}>
+                  <button
+                    type="button"
+                    onClick={() => setMobileRange((v) => !v)}
+                    aria-expanded={mobileRange}
+                    className="flex w-full items-center justify-between py-4 font-display text-lg font-semibold text-brand-ink"
+                  >
+                    {item.label}
+                    <ChevronDown className={cn("h-5 w-5 text-brand-steel transition-transform", mobileRange && "rotate-180")} aria-hidden="true" />
+                  </button>
+                  {mobileRange ? (
+                    <div className="pb-4">
+                      <Link href={item.href} onClick={() => setOpen(false)} className="block py-1.5 text-sm font-semibold text-brand-primary">
+                        View full range
+                      </Link>
+                      {rangeMega.map((col) => (
+                        <div key={col.label} className="mt-3">
+                          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-brand-steel">{col.label}</p>
+                          <ul className="mt-1.5 space-y-1.5">
+                            {col.ranges.map((r) => (
+                              <li key={r.href}>
+                                <Link href={r.href} onClick={() => setOpen(false)} className="block py-0.5 text-sm text-brand-graphite">
+                                  {r.name}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
                   ) : null}
-                </Link>
-              </li>
-            ))}
+                </li>
+              ) : (
+                <li key={item.href}>
+                  <Link href={item.href} onClick={() => setOpen(false)} className="flex items-center justify-between py-4 font-display text-lg font-semibold text-brand-ink">
+                    {item.label}
+                  </Link>
+                </li>
+              ),
+            )}
           </ul>
           <div className="mt-6 grid gap-3">
-            <Button href="#enquire" variant="primary" size="lg" fullWidth onClick={() => setOpen(false)}>
+            <Button href="/contact#enquire" variant="primary" size="lg" fullWidth onClick={() => setOpen(false)}>
               Trade enquiry
             </Button>
             <div className="grid grid-cols-2 gap-3">
-              <a
-                href={telLink}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-brand-primary/20 text-sm font-medium text-brand-primary"
-                data-cta="call"
-              >
+              <a href={telLink} className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-brand-primary/20 text-sm font-medium text-brand-primary" data-cta="call">
                 <Phone className="h-4 w-4" /> Call
               </a>
-              <a
-                href={whatsappLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-brand-whatsapp text-sm font-semibold text-brand-ink"
-                data-cta="whatsapp"
-              >
+              <a href={whatsappLink()} target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-brand-whatsapp text-sm font-semibold text-brand-ink" data-cta="whatsapp">
                 <MessageCircle className="h-4 w-4" /> WhatsApp
               </a>
             </div>

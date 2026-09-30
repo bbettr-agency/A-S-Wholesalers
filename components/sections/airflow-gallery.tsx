@@ -2,12 +2,13 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ArrowDown } from "lucide-react";
 import { Container, Section } from "@/components/ui/layout";
 import { SectionHeading } from "@/components/ui/typography";
 import { Reveal } from "@/engine/motion";
 import { cn } from "@/lib/utils";
-import { systemStages, families, type SystemStage } from "@/config/products";
+import { systemStages, families, rangeSlugs, type SystemStage } from "@/config/products";
 import { products } from "@/config/home";
 import { AirflowVisual } from "./airflow-visual";
 import { EnquireLink } from "@/components/funnel/enquire-link";
@@ -270,15 +271,17 @@ function ExploreIndex() {
         {families.map((f) => (
           <li key={f.id}>
             <div className="flex items-center gap-4 border-b border-brand-line py-4">
-              <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-md bg-brand-mist">
-                <Image src={f.image} alt="" fill sizes="64px" className="object-contain p-0.5" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="font-semibold text-brand-ink">{f.name}</p>
-                <p className="tnum mt-0.5 text-xs text-brand-steel">
-                  {f.capacity} · {f.energyClass}
-                </p>
-              </div>
+              <Link href={`/haier-range/${rangeSlugs[f.id] ?? ""}`} className="group flex min-w-0 flex-1 items-center gap-4">
+                <div className="relative h-12 w-16 shrink-0 overflow-hidden rounded-md bg-brand-mist">
+                  <Image src={f.image} alt="" fill sizes="64px" className="object-contain p-0.5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="font-semibold text-brand-ink transition-colors group-hover:text-brand-accent">{f.name}</p>
+                  <p className="tnum mt-0.5 text-xs text-brand-steel">
+                    {f.capacity} · {f.energyClass}
+                  </p>
+                </div>
+              </Link>
               <EnquireLink interest={f.solution} label="Enquire" className="shrink-0" />
             </div>
           </li>

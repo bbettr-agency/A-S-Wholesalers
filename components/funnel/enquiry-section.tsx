@@ -11,7 +11,13 @@ import { EnquiryForm } from "./enquiry-form";
  * Enquiry section – the page's single dark spotlight and strongest conversion
  * moment. Copy on the left with direct channels; the reusable form on the right.
  */
-export function EnquirySection() {
+export function EnquirySection({
+  defaultInterest,
+  sourceProduct,
+}: {
+  defaultInterest?: string;
+  sourceProduct?: string;
+} = {}) {
   return (
     <Section tone="ink" id="enquire">
       <Container>
@@ -69,7 +75,7 @@ export function EnquirySection() {
 
           <Reveal delay={0.12}>
             <div className="rounded-3xl bg-white/[0.03] p-6 ring-1 ring-white/10 md:p-8">
-              <EnquiryForm onDark />
+              <EnquiryForm onDark defaultInterest={defaultInterest} sourceProduct={sourceProduct} />
             </div>
           </Reveal>
         </div>

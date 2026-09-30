@@ -1,53 +1,62 @@
 /**
- * Navigation configuration.
- *
- * This is a HOMEPAGE-ONLY demo. Nav items point to real placeholder routes
- * (/products, /about, …) that exist as honest "in progress" pages – they are NOT
- * on-page anchors and they do NOT fake complete pages. Home is "/". The structure
- * anticipates the production pages built after client approval.
- *
- * `status: "soon"` marks routes not yet built (rendered with a subtle marker and
- * excluded from the sitemap / set to noindex on their own page).
+ * Navigation – real production routes (Phase 2). The "Haier Range" item opens a
+ * mega-menu built from the catalogue data (categories → individual range pages).
  */
+import { categories, rangeDetail } from "./catalogue";
+import { familyById } from "./products";
 
 export interface NavItem {
   label: string;
   href: string;
-  status: "live" | "soon";
+  /** Opens the Haier Range mega-menu instead of navigating directly. */
+  mega?: boolean;
 }
 
 export const primaryNav: NavItem[] = [
-  { label: "Home", href: "/", status: "live" },
-  { label: "Products", href: "/products", status: "soon" },
-  { label: "Solutions", href: "/services", status: "soon" },
-  { label: "About", href: "/about", status: "soon" },
-  { label: "Gallery", href: "/gallery", status: "soon" },
-  { label: "Contact", href: "/contact", status: "soon" },
+  { label: "Home", href: "/" },
+  { label: "Haier Range", href: "/haier-range", mega: true },
+  { label: "Trade Supply", href: "/trade-supply" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
-/** In-page anchors used by the homepage itself (buttons, not nav). */
-export const homeAnchors = {
-  range: "#range",
-  products: "#products",
-  enquire: "#enquire",
-  location: "#location",
-} as const;
+/** Mega-menu columns: one per category, listing its individual range pages. */
+export const rangeMega = categories.map((c) => ({
+  label: c.title,
+  categoryHref: `/haier-range#${c.slug}`,
+  ranges: c.familyIds
+    .map((id) => {
+      const f = familyById(id);
+      const d = rangeDetail[id];
+      return f && d ? { name: f.name, href: `/haier-range/${d.slug}` } : null;
+    })
+    .filter((x): x is { name: string; href: string } => x !== null),
+}));
 
 export const footerNav: { heading: string; items: NavItem[] }[] = [
   {
-    heading: "Explore",
+    heading: "Haier range",
     items: [
-      { label: "The Haier range", href: "/products", status: "soon" },
-      { label: "Solutions", href: "/services", status: "soon" },
-      { label: "About A&S", href: "/about", status: "soon" },
-      { label: "Gallery", href: "/gallery", status: "soon" },
+      { label: "Wall-mounted", href: "/haier-range#wall-mounted" },
+      { label: "Solar", href: "/haier-range#solar" },
+      { label: "Multi-split", href: "/haier-range#multi-split" },
+      { label: "Ducted", href: "/haier-range#ducted" },
+      { label: "Cassette", href: "/haier-range#cassette" },
+    ],
+  },
+  {
+    heading: "Company",
+    items: [
+      { label: "Haier range", href: "/haier-range" },
+      { label: "Trade supply", href: "/trade-supply" },
+      { label: "About A&S", href: "/about" },
     ],
   },
   {
     heading: "Get in touch",
     items: [
-      { label: "Send an enquiry", href: "/#enquire", status: "live" },
-      { label: "Contact", href: "/contact", status: "soon" },
+      { label: "Trade enquiry", href: "/contact#enquire" },
+      { label: "Contact", href: "/contact" },
     ],
   },
 ];

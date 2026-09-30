@@ -15,9 +15,19 @@ type Status = "idle" | "submitting" | "success" | "error";
  * backend – the endpoint validates and confirms (and forwards to GHL when the
  * webhook env is configured). Honeypot + POPIA consent included.
  */
-export function EnquiryForm({ onDark = true }: { onDark?: boolean }) {
+export function EnquiryForm({
+  onDark = true,
+  defaultInterest = "",
+  sourceProduct,
+}: {
+  onDark?: boolean;
+  /** Pre-select a Haier range/category (carried from a product page or CTA). */
+  defaultInterest?: string;
+  /** Product/range name recorded as the enquiry source (for CRM). */
+  sourceProduct?: string;
+}) {
   const [status, setStatus] = useState<Status>("idle");
-  const [interest, setInterest] = useState("");
+  const [interest, setInterest] = useState(defaultInterest);
   const formRef = useRef<HTMLFormElement>(null);
   const interestRef = useRef<HTMLSelectElement>(null);
 
@@ -106,6 +116,7 @@ export function EnquiryForm({ onDark = true }: { onDark?: boolean }) {
         <label htmlFor="company_url">Do not fill this</label>
         <input id="company_url" name="company_url" type="text" tabIndex={-1} autoComplete="off" />
       </div>
+      {sourceProduct ? <input type="hidden" name="source_product" value={sourceProduct} /> : null}
 
       <div className="grid gap-4 sm:grid-cols-2">
         {enquiryFields.map((f) => {

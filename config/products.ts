@@ -352,6 +352,20 @@ export const systemStages: SystemStage[] = [
   },
 ];
 
+/** Range-page slugs, keyed by family id. Kept lightweight so the homepage can link
+ *  to range pages without importing the full catalogue detail. Mirrors catalogue.ts. */
+export const rangeSlugs: Record<string, string> = {
+  aeropure: "aeropure-inverter",
+  "ai-eco": "ai-eco-inverter",
+  turbo: "turbo-cooling",
+  "solar-eco": "solar-eco-inverter",
+  "multi-odu": "multi-odu-free-match",
+  "lsp-duct": "lsp-duct",
+  "msp-duct": "msp-duct",
+  "mini-cassette": "mini-cassette",
+  cassette: "cassette",
+};
+
 export function familyById(id: string): ProductFamily | undefined {
   return families.find((f) => f.id === id);
 }

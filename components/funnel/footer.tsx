@@ -54,9 +54,6 @@ export function Footer() {
                   <li key={item.href}>
                     <Link href={item.href} className="inline-flex items-center gap-1.5 transition-colors hover:text-brand-bone">
                       {item.label}
-                      {item.status === "soon" ? (
-                        <span className="font-medium text-[0.55rem] uppercase tracking-wider text-brand-steel">soon</span>
-                      ) : null}
                     </Link>
                   </li>
                 ))}

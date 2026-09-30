@@ -22,6 +22,7 @@ interface EnquiryPayload {
   location?: string;
   interest?: string;
   message?: string;
+  source_product?: string;
   consent?: string;
   company_url?: string; // honeypot
   attribution?: Record<string, string>;
@@ -61,6 +62,7 @@ export async function POST(request: Request) {
     businessType: (body.businessType ?? "").trim(),
     location: (body.location ?? "").trim(),
     interest: body.interest ?? "",
+    sourceProduct: (body.source_product ?? "").trim(),
     message: (body.message ?? "").trim(),
     attribution: body.attribution ?? {},
     receivedAt: new Date().toISOString(),

@@ -14,7 +14,11 @@ export function buildMetadata(opts?: {
 }): Metadata {
   const path = opts?.path ?? "/";
   const url = new URL(path, site.url).toString();
-  const title = opts?.title ?? seo.titleDefault;
+  // Home passes no title (uses the full default). Sub-pages pass a bare page name
+  // and get "{name} | A&S Wholesalers" via the template.
+  const title = opts?.title
+    ? seo.titleTemplate.replace("%s", opts.title)
+    : seo.titleDefault;
   const description = opts?.description ?? seo.description;
 
   return {

@@ -66,3 +66,52 @@ export function organizationSchema() {
     description: `${site.name}. ${addressOneLine}.`,
   };
 }
+
+/** Absolute URL from a site-relative path. */
+function abs(path: string): string {
+  return new URL(path, site.url).toString();
+}
+
+/** BreadcrumbList schema from an ordered list of {name, url}. */
+export function breadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: it.name,
+      item: abs(it.url),
+    })),
+  };
+}
+
+/**
+ * Product schema for a Haier range. Conservative: brand + specs only, NO offers,
+ * price, availability or ratings (none are confirmed for A&S).
+ */
+export function productSchema(input: {
+  name: string;
+  description: string;
+  image: string;
+  models: string[];
+  specs: { label: string; value: string }[];
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `Haier ${input.name}`,
+    description: input.description,
+    category: "Air conditioner",
+    brand: { "@type": "Brand", name: "Haier" },
+    image: abs(input.image),
+    url: abs(input.url),
+    additionalProperty: input.specs.map((s) => ({
+      "@type": "PropertyValue",
+      name: s.label,
+      value: s.value,
+    })),
+    isRelatedTo: { "@type": "Organization", name: site.name, url: site.url },
+  };
+}
