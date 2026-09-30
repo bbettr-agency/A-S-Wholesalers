@@ -8,7 +8,7 @@
  * "authorised distributor"). Copy is trade-aware: written for a retailer / reseller
  * / installer deciding what they can source and offer their customers.
  */
-import { families, solutions, familyById, type ProductFamily, type SolutionType, type AirflowKind } from "./products";
+import { families, solutions, familyById, type ProductFamily, type SolutionType } from "./products";
 
 export interface RangeTech {
   title: string;
@@ -20,7 +20,6 @@ export interface Spec {
 }
 export interface RangeDetail {
   slug: string;
-  airflow: AirflowKind;
   seoTitle: string;
   seoDescription: string;
   /** One-line trade positioning under the H1. */
@@ -92,7 +91,6 @@ export const categories: Category[] = [
 export const rangeDetail: Record<string, RangeDetail> = {
   aeropure: {
     slug: "aeropure-inverter",
-    airflow: "wall",
     seoTitle: "Haier Aeropure Inverter",
     seoDescription:
       "The Haier Aeropure Inverter – black-glass wall split, 9,000–24,000 BTU, UVC Plus and Self-Clean. Stocked and supplied to the trade by A&S Wholesalers, Centurion.",
@@ -122,7 +120,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   "ai-eco": {
     slug: "ai-eco-inverter",
-    airflow: "wall",
     seoTitle: "Haier AI ECO Inverter",
     seoDescription:
       "The Haier AI ECO Inverter – white wall split, 9,000–24,000 BTU, AI ECO efficiency and the Hyper PCB for unstable supply. Supplied to the trade by A&S Wholesalers.",
@@ -152,7 +149,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   turbo: {
     slug: "turbo-cooling",
-    airflow: "wall",
     seoTitle: "Haier Turbo Cooling",
     seoDescription:
       "Haier Turbo Cooling – the value wall split, 8,400–21,800 BTU, fast cooling and an anti-corrosion coil. Supplied to the trade by A&S Wholesalers, Centurion.",
@@ -182,7 +178,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   "solar-eco": {
     slug: "solar-eco-inverter",
-    airflow: "solar",
     seoTitle: "Haier Solar-ECO Inverter",
     seoDescription:
       "Haier Solar-ECO Inverter – DC solar-driven wall split (MC4), 18,000 BTU, solar-and-grid auto-balance and wide voltage. Supplied to the trade by A&S Wholesalers.",
@@ -212,7 +207,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   "multi-odu": {
     slug: "multi-odu-free-match",
-    airflow: "multi",
     seoTitle: "Haier Multi ODU · Free Match",
     seoDescription:
       "Haier Multi ODU Free Match – one outdoor unit driving up to four indoor units of mixed type. Multi-split systems supplied to the trade by A&S Wholesalers, Centurion.",
@@ -241,7 +235,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   "lsp-duct": {
     slug: "lsp-duct",
-    airflow: "ducted",
     seoTitle: "Haier LSP Duct",
     seoDescription:
       "Haier LSP low-static ducted – the thinnest in its class at 180 mm, 8,500–24,000 BTU, for concealed residential installs. Supplied to the trade by A&S Wholesalers.",
@@ -270,7 +263,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   "msp-duct": {
     slug: "msp-duct",
-    airflow: "ducted",
     seoTitle: "Haier MSP Duct",
     seoDescription:
       "Haier MSP medium-static ducted – 12,000–36,000 BTU, dual-fan air supply and built-in water pump for larger areas and longer duct runs. Supplied to the trade by A&S Wholesalers.",
@@ -300,7 +292,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   "mini-cassette": {
     slug: "mini-cassette",
-    airflow: "cassette",
     seoTitle: "Haier Mini Cassette",
     seoDescription:
       "Haier Mini Cassette – compact 4-way ceiling cassette, 8,500–24,000 BTU, 56 °C Steri-Clean and independent louvres. Supplied to the trade by A&S Wholesalers, Centurion.",
@@ -330,7 +321,6 @@ export const rangeDetail: Record<string, RangeDetail> = {
   },
   cassette: {
     slug: "cassette",
-    airflow: "cassette",
     seoTitle: "Haier Cassette",
     seoDescription:
       "Haier full-size ceiling cassette – 24,000–36,000 BTU, even 360° 4-way airflow and fresh-air intake for open commercial floors. Supplied to the trade by A&S Wholesalers.",

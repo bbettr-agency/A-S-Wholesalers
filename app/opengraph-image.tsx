@@ -44,7 +44,7 @@ export default function OgImage() {
             <span style={{ color: "#F04858" }}>supplied</span> to the trade.
           </div>
           <div style={{ marginTop: 26, color: "#AEB7C6", fontSize: 28 }}>
-            Wholesale distribution · Retailers · Resellers · Installers
+            Wholesale distribution · Retailers · Resellers · Trade
           </div>
         </div>
 

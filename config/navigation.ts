@@ -47,15 +47,8 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
   {
     heading: "Company",
     items: [
-      { label: "Haier range", href: "/haier-range" },
       { label: "Trade supply", href: "/trade-supply" },
       { label: "About A&S", href: "/about" },
-    ],
-  },
-  {
-    heading: "Get in touch",
-    items: [
-      { label: "Trade enquiry", href: "/contact#enquire" },
       { label: "Contact", href: "/contact" },
     ],
   },

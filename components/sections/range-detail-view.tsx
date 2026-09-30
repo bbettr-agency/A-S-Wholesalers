@@ -7,14 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Reveal, Stagger } from "@/engine/motion";
 import { Breadcrumbs } from "@/components/funnel/breadcrumbs";
 import { RangeCard } from "@/components/sections/range-card";
-import { AirflowVisual } from "@/components/sections/airflow-visual";
 import { EnquirySection } from "@/components/funnel/enquiry-section";
 import type { ProductFamily } from "@/config/products";
 import { type RangeDetail, categoryForType, relatedFor } from "@/config/catalogue";
 
 /**
  * RangeDetailView – the shared product-page template. Consistent system, but the
- * product's own data (airflow type, specs, applications, tech) drives the content.
+ * product's own data (specs, applications, tech) drives the content.
  * The closing enquiry carries the range as context for CRM.
  */
 export function RangeDetailView({ family, detail }: { family: ProductFamily; detail: RangeDetail }) {
@@ -58,7 +57,7 @@ export function RangeDetailView({ family, detail }: { family: ProductFamily; det
               </div>
             </div>
 
-            {/* Product stage with product-specific airflow */}
+            {/* Product stage – the render carries the visual weight on a soft depth glow */}
             <div className="relative">
               <div className="relative aspect-[16/11] w-full">
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 [background:radial-gradient(58%_54%_at_50%_46%,rgba(27,42,74,0.06),transparent_70%)]" />
@@ -71,12 +70,6 @@ export function RangeDetailView({ family, detail }: { family: ProductFamily; det
                   quality={88}
                   className="object-contain"
                 />
-                <AirflowVisual kind={detail.airflow} active />
-              </div>
-              <div className="mt-3 flex items-center justify-center gap-3">
-                <span className="h-px w-8 bg-brand-line" aria-hidden="true" />
-                <span className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-brand-steel">Airflow — {category?.label ?? family.name}</span>
-                <span className="h-px w-8 bg-brand-line" aria-hidden="true" />
               </div>
             </div>
           </div>

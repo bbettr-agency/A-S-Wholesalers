@@ -21,7 +21,7 @@ export const hero = {
   headline: "Haier air conditioning,",
   headlineAccent: "supplied",
   headlineRest: "to the trade.",
-  sub: "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion – for independent retailers, resellers and installers looking to stock and supply Haier to their own customers.",
+  sub: "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion – for independent retailers and resellers looking to stock and supply Haier to their own customers.",
   primaryCta: { label: "Enquire about stocking Haier", href: "#enquire" },
   secondaryCta: { label: "See the range", href: "#range" },
   // Floating data chips on the hero product render (datasheet motif).

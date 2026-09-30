@@ -22,13 +22,13 @@ export const rangeIndex = {
 export const tradeSupply = {
   metaTitle: "Trade Supply – Stock Haier",
   metaDescription:
-    "A&S Wholesalers supplies the Haier air-conditioning range to the trade – independent retailers, resellers and installers. Understand the range and start a trade enquiry.",
+    "A&S Wholesalers supplies the Haier air-conditioning range to the trade – independent retailers and resellers. Understand the range and start a trade enquiry.",
   hero: {
     eyebrow: "Trade supply",
     headline: "Stock Haier.",
     headlineAccent: "Supplied",
     headlineRest: "by A&S.",
-    lead: "A&S Wholesalers distributes the complete Haier air-conditioning range from Centurion. If you sell, resell or install air conditioning, you can source the range through us and supply it to your own customers.",
+    lead: "A&S Wholesalers distributes the complete Haier air-conditioning range from Centurion. If you sell or resell air conditioning, you can source the range through us and supply it to your own customers.",
   },
   audience: {
     eyebrow: "Who it's for",
@@ -37,7 +37,7 @@ export const tradeSupply = {
     items: [
       { title: "Retailers & dealers", body: "Shops and dealerships adding a recognised air-conditioning brand to the floor." },
       { title: "Resellers", body: "Businesses reselling air conditioning who want a full range from one source." },
-      { title: "Installers & HVAC", body: "Install and HVAC businesses sourcing the equipment they fit for customers." },
+      { title: "Trade buyers", body: "Businesses buying Haier in volume to supply on to their own customers." },
     ],
   },
   breadth: {
@@ -59,13 +59,13 @@ export const tradeSupply = {
 export const about = {
   metaTitle: "About",
   metaDescription:
-    "A&S Wholesalers is a Haier air-conditioning wholesaler in Centurion, Gauteng – distributing the complete Haier range to retailers, resellers and installers across the trade.",
+    "A&S Wholesalers is a Haier air-conditioning wholesaler in Centurion, Gauteng – distributing the complete Haier range to retailers and resellers across the trade.",
   hero: {
     eyebrow: "About A&S",
     headline: "The wholesale layer",
     headlineAccent: "between Haier",
     headlineRest: "and your shelves.",
-    lead: "A&S Wholesalers is a Haier air-conditioning wholesaler based in Centurion, Gauteng. We distribute the complete Haier range and supply it to independent retailers, resellers and installers – the businesses that stock and fit Haier for their own customers.",
+    lead: "A&S Wholesalers is a Haier air-conditioning wholesaler based in Centurion, Gauteng. We distribute the complete Haier range and supply it to independent retailers and resellers – the businesses that stock and sell Haier to their own customers.",
   },
   what: {
     eyebrow: "What we do",

@@ -239,15 +239,15 @@ export const families: ProductFamily[] = [
 ];
 
 /**
- * System stages – the immersive "Airflow Gallery". Five air-conditioning SYSTEM
- * TYPES (not nine cards), each grouping its real catalogue families. `airflow`
- * selects the product-specific airflow visualisation. All facts are Haier's.
+ * System stages – the product gallery. Five air-conditioning SYSTEM TYPES (not
+ * nine cards), each grouping its real catalogue families. `key` is the system-type
+ * identifier used for stage identity. All facts are Haier's.
  */
-export type AirflowKind = "wall" | "solar" | "multi" | "ducted" | "cassette";
+export type SystemTypeKey = "wall" | "solar" | "multi" | "ducted" | "cassette";
 
 export interface SystemStage {
   n: string;
-  key: AirflowKind;
+  key: SystemTypeKey;
   type: string;
   solutionType: SolutionType;
   families: string[];

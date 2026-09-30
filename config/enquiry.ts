@@ -1,8 +1,8 @@
 /**
  * Enquiry configuration – the primary conversion, now a TRADE enquiry.
  *
- * The form qualifies a potential wholesale/trade lead (retailer, reseller,
- * installer / HVAC business) without being long enough to kill conversion. Built
+ * The form qualifies a potential wholesale/trade lead (retailer, reseller or
+ * other trade buyer) without being long enough to kill conversion. Built
  * for later GoHighLevel webhook integration (POST /api/enquiry → GHL_WEBHOOK_URL).
  * No fake backend; the demo validates and confirms. See app/api/enquiry/route.ts.
  */
@@ -26,7 +26,6 @@ export const businessTypeOptions = [
   { value: "", label: "Type of business" },
   { value: "retailer", label: "Retailer / dealer" },
   { value: "reseller", label: "Reseller" },
-  { value: "installer", label: "Installer / HVAC business" },
   { value: "other", label: "Other trade" },
 ] as const;
 

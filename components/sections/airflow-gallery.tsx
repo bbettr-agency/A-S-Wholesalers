@@ -10,7 +10,6 @@ import { Reveal } from "@/engine/motion";
 import { cn } from "@/lib/utils";
 import { systemStages, families, rangeSlugs, type SystemStage } from "@/config/products";
 import { products } from "@/config/home";
-import { AirflowVisual } from "./airflow-visual";
 import { EnquireLink } from "@/components/funnel/enquire-link";
 import { prefillEnquiry } from "@/components/funnel/enquiry-events";
 
@@ -162,7 +161,7 @@ function StagePanel({ stage, active }: { stage: SystemStage; active: boolean }) 
       )}
     >
       <StageCopy stage={stage} />
-      <StageStage stage={stage} active={active} />
+      <StageStage stage={stage} />
     </div>
   );
 }
@@ -213,11 +212,11 @@ function StageCopy({ stage }: { stage: SystemStage }) {
   );
 }
 
-/* ── Shared: the product stage with airflow ──
+/* ── Shared: the product stage ──
    No card / ring / inner canvas – the PRODUCT is the object. It sits on the stage
-   with a soft depth glow (not a bordered box); airflow radiates around it. The
-   enhanced white-background renders merge into the bone surface. */
-function StageStage({ stage, active, priority }: { stage: SystemStage; active: boolean; priority?: boolean }) {
+   with a soft depth glow (not a bordered box), so the enhanced white-background
+   render merges into the bone surface and carries the visual weight on its own. */
+function StageStage({ stage, priority }: { stage: SystemStage; priority?: boolean }) {
   return (
     <div className="relative">
       <div className="relative aspect-[16/11] w-full">
@@ -235,14 +234,6 @@ function StageStage({ stage, active, priority }: { stage: SystemStage; active: b
           quality={88}
           className="object-contain"
         />
-        {/* airflow sits over the product (white renders are opaque), reading as air
-            leaving the unit rather than a graphic behind a card */}
-        <AirflowVisual kind={stage.key} active={active} />
-      </div>
-      <div className="mt-3 flex items-center justify-center gap-3">
-        <span className="h-px w-8 bg-brand-line" aria-hidden="true" />
-        <span className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-brand-steel">Airflow – {stage.type}</span>
-        <span className="h-px w-8 bg-brand-line" aria-hidden="true" />
       </div>
     </div>
   );
@@ -252,7 +243,7 @@ function StageStage({ stage, active, priority }: { stage: SystemStage; active: b
 function StackedStage({ stage, first }: { stage: SystemStage; first?: boolean }) {
   return (
     <div className={cn("pt-10", !first && "border-t border-brand-line")}>
-      <StageStage stage={stage} active priority={first} />
+      <StageStage stage={stage} priority={first} />
       <div className="mt-6">
         <StageCopy stage={stage} />
       </div>
