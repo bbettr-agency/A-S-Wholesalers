@@ -41,7 +41,11 @@ export function RangeDetailView({ family, detail }: { family: ProductFamily; det
 
               <div className="mt-6 grid max-w-md grid-cols-3 gap-2">
                 <DataChip label="Capacity" value={family.capacity} />
-                <DataChip label="BTU" value={family.btu} />
+                {family.solution === "multi" ? (
+                  <DataChip label="Indoor units" value="Up to 4" />
+                ) : (
+                  <DataChip label="BTU" value={family.btu} />
+                )}
                 <DataChip label="Class" value={family.energyClass} />
               </div>
 

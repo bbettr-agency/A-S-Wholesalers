@@ -24,7 +24,7 @@ export const seo = {
     "air conditioning distributor South Africa",
     "wholesale air conditioners",
     "trade air conditioning supplier",
-    "air conditioning supplier for installers",
+    "air conditioning supplier for resellers",
     "Haier air conditioning Centurion",
     // Product / category discovery (organic reach)
     "Haier wall mounted air conditioners",

@@ -110,7 +110,7 @@ export function EnquiryForm({
   const labelBase = cn("mb-1.5 block text-sm font-medium", onDark ? "text-brand-fog" : "text-brand-graphite");
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-4">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
       {/* Honeypot */}
       <div aria-hidden="true" className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
         <label htmlFor="company_url">Do not fill this</label>

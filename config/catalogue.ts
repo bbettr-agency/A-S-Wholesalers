@@ -5,8 +5,8 @@
  *
  * All product facts come from the supplied Haier 2026 SA catalogue. A&S adds no
  * commercial claims (no MOQ, pricing, discounts, delivery, exclusivity, or
- * "authorised distributor"). Copy is trade-aware: written for a retailer / reseller
- * / installer deciding what they can source and offer their customers.
+ * "authorised distributor"). Copy is trade-aware: written for a retailer or
+ * reseller deciding what they can source and offer their customers.
  */
 import { families, solutions, familyById, type ProductFamily, type SolutionType } from "./products";
 
@@ -164,12 +164,12 @@ export const rangeDetail: Record<string, RangeDetail> = {
       { title: "Turbo cooling", body: "Runs the motor at higher frequency in Turbo mode to cool a room quickly." },
       { title: "Anti-corrosion coil", body: "Golden-fin coating and blue-glaze U-bends protect the coil from salt, damp and chemicals." },
       { title: "WiFi ready", body: "App control available for customers who want it." },
-      { title: "Easy to maintain", body: "Simplified disassembly cuts service time for your install/maintenance customers." },
+      { title: "Easy to maintain", body: "Simplified disassembly cuts service and maintenance time for your customers." },
     ],
     specs: [
       { label: "Cooling capacity", value: "2.5 – 6.4 kW" },
       { label: "Capacity (BTU)", value: "8,400 – 21,800" },
-      { label: "Energy class", value: "A / A+" },
+      { label: "Energy class", value: "B / A" },
       { label: "Refrigerant", value: "R32" },
       { label: "Control", value: "Remote (WiFi ready)" },
       { label: "Model codes", value: "TS09QA32I – TS24QA32I" },
@@ -183,7 +183,7 @@ export const rangeDetail: Record<string, RangeDetail> = {
       "Haier Solar-ECO Inverter – DC solar-driven wall split (MC4), 18,000 BTU, solar-and-grid auto-balance and wide voltage. Supplied to the trade by A&S Wholesalers.",
     positioning: "Cooling that runs off the sun.",
     overview:
-      "Solar-ECO is a genuine differentiator for your range. It plugs straight into PV panels via MC4 and balances solar with grid automatically – so it keeps cooling through load-shedding and shaves high tariffs. A strong story for solar installers and off-grid customers.",
+      "Solar-ECO is a genuine differentiator for your range. It plugs straight into PV panels via MC4 and balances solar with grid automatically – so it keeps cooling through load-shedding and shaves high tariffs. A strong story for solar and off-grid customers.",
     applications: [
       "Homes with solar PV already installed",
       "Off-grid and high-tariff sites",
@@ -212,7 +212,7 @@ export const rangeDetail: Record<string, RangeDetail> = {
       "Haier Multi ODU Free Match – one outdoor unit driving up to four indoor units of mixed type. Multi-split systems supplied to the trade by A&S Wholesalers, Centurion.",
     positioning: "One outdoor unit, several rooms.",
     overview:
-      "The Free Match multi-split lets a customer run up to four indoor units – wall, cassette or ducted – off a single outdoor unit, each controlled independently. It solves the roof-clutter and wall-space problem on multi-room homes and apartments, and lets your installers mix indoor types on one job.",
+      "The Free Match multi-split lets a customer run up to four indoor units – wall, cassette or ducted – off a single outdoor unit, each controlled independently. It solves the roof-clutter and wall-space problem on multi-room homes and apartments, and lets your customers mix indoor types on one job.",
     applications: [
       "Multi-room homes and apartments",
       "Sites with limited outdoor / roof space",
@@ -229,7 +229,7 @@ export const rangeDetail: Record<string, RangeDetail> = {
       { label: "Energy class", value: "A+++ / A++" },
       { label: "Refrigerant", value: "R32" },
       { label: "Compressor", value: "Twin rotary" },
-      { label: "Model codes", value: "2H50 / 3H60 / 4H80WEAFRA" },
+      { label: "Model codes", value: "2H50MEAFRA / 3H60 / 4H80WEAFRA" },
     ],
     relatedIds: ["ai-eco", "lsp-duct", "mini-cassette"],
   },
@@ -277,7 +277,7 @@ export const rangeDetail: Record<string, RangeDetail> = {
     tech: [
       { title: "Dual-fan air supply", body: "Two fans increase air volume and even distribution while cutting high-speed power draw." },
       { title: "Higher static pressure", body: "Pushes air through longer duct runs and more outlets than a low-static unit." },
-      { title: "Built-in water pump", body: "Standard lift pump gives installers flexible condensate drainage." },
+      { title: "Built-in water pump", body: "Standard lift pump gives flexible condensate drainage on install." },
       { title: "Electricity management", body: "App-based usage tracking and targets – a useful running-cost story." },
     ],
     specs: [
