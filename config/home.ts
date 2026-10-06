@@ -26,9 +26,10 @@ export const hero = {
   sub: "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion – for independent retailers and resellers looking to stock and supply Haier to their own customers.",
   primaryCta: { label: "Enquire about stocking Haier", href: "#enquire" },
   secondaryCta: { label: "See the range", href: "#range" },
-  // Floating data chips on the hero product render (datasheet motif).
-  productChips: ["9,000 – 24,000 BTU", "R32 inverter", "ES09–24QF32I"],
-  productCaption: "Aeropure Inverter – the flagship wall split",
+  // Lifestyle hero visual – a Haier wall-split in a real premium interior.
+  image: "/images/lifestyle/haier-living-room.jpg",
+  imageAlt:
+    "A white Haier wall-mounted air conditioner in a premium modern living room with a modular sofa and a sunset landscape through full-height windows",
 };
 
 export const positioning = {
