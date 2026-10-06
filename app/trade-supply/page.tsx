@@ -10,9 +10,15 @@ import { Breadcrumbs } from "@/components/funnel/breadcrumbs";
 import { Location } from "@/components/sections/location";
 import { EnquirySection } from "@/components/funnel/enquiry-section";
 import { WhatsAppButton } from "@/components/funnel/channel-buttons";
+import { DistributorSupport } from "@/components/sections/distributor-support";
+import { Certificate } from "@/components/sections/certificate";
+import { WarrantyBlock } from "@/components/sections/warranty-block";
+import { CatalogueCTA } from "@/components/sections/catalogue-cta";
+import { TradeFAQ } from "@/components/sections/trade-faq";
 import { buildMetadata } from "@/lib/metadata";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 import { tradeSupply } from "@/config/pages";
+import { becomeStockist, faq } from "@/config/distributor";
 import { categories } from "@/config/catalogue";
 
 export const metadata: Metadata = buildMetadata({
@@ -31,6 +37,7 @@ export default function TradeSupplyPage() {
   return (
     <main id="main">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema(crumbs)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faq.items)) }} />
 
       {/* Hero */}
       <Section tone="bone" className="pt-32 md:pt-36">
@@ -82,6 +89,44 @@ export default function TradeSupplyPage() {
         </Container>
       </Section>
 
+      {/* Distributor support / assurances */}
+      <DistributorSupport tone="bone" />
+
+      {/* Authorised-distributor certificate – integrated trust moment */}
+      <Certificate tone="mist" compact />
+
+      {/* Become a stockist – contact-first, no rigid online sign-up */}
+      <Section tone="bone">
+        <Container>
+          <Reveal>
+            <div className="max-w-2xl">
+              <Eyebrow>{becomeStockist.eyebrow}</Eyebrow>
+              <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">{becomeStockist.heading}</h2>
+              <p className="mt-4 text-base leading-relaxed text-brand-graphite">{becomeStockist.lead}</p>
+            </div>
+          </Reveal>
+          <Stagger className="mt-10 grid gap-6 md:grid-cols-3">
+            {becomeStockist.steps.map((s) => (
+              <Reveal key={s.n} preset="fadeUpItem">
+                <div className="rounded-2xl bg-white p-6 ring-1 ring-brand-line md:p-7">
+                  <span className="tnum font-display text-3xl font-extrabold tracking-tight text-brand-cloud">{s.n}</span>
+                  <h3 className="mt-3 font-display text-lg font-semibold text-brand-ink">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-graphite">{s.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </Stagger>
+          <Reveal delay={0.1}>
+            <div className="mt-8">
+              <Button href="#enquire" variant="primary" size="md">Start a trade enquiry</Button>
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
+
+      {/* Warranty */}
+      <WarrantyBlock tone="mist" />
+
       {/* Breadth of range */}
       <Section tone="bone">
         <Container>
@@ -114,28 +159,11 @@ export default function TradeSupplyPage() {
         </Container>
       </Section>
 
-      {/* How it works */}
-      <Section tone="mist">
-        <Container>
-          <Reveal>
-            <div className="max-w-2xl">
-              <Eyebrow>{t.process.eyebrow}</Eyebrow>
-              <h2 className="mt-2 font-display text-3xl font-bold tracking-tight text-brand-ink md:text-4xl">{t.process.heading}</h2>
-            </div>
-          </Reveal>
-          <Stagger className="mt-10 grid gap-6 md:grid-cols-3">
-            {t.process.steps.map((s) => (
-              <Reveal key={s.n} preset="fadeUpItem">
-                <div className="rounded-2xl bg-white p-6 ring-1 ring-brand-line md:p-7">
-                  <span className="tnum font-display text-3xl font-extrabold tracking-tight text-brand-cloud">{s.n}</span>
-                  <h3 className="mt-3 font-display text-lg font-semibold text-brand-ink">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-brand-graphite">{s.body}</p>
-                </div>
-              </Reveal>
-            ))}
-          </Stagger>
-        </Container>
-      </Section>
+      {/* Downloadable Haier catalogue */}
+      <CatalogueCTA tone="mist" />
+
+      {/* Trade FAQ */}
+      <TradeFAQ tone="bone" />
 
       <Location />
       <EnquirySection />

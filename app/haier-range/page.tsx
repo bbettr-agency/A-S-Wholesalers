@@ -4,6 +4,7 @@ import { Eyebrow } from "@/components/ui/typography";
 import { Reveal, Stagger } from "@/engine/motion";
 import { Breadcrumbs } from "@/components/funnel/breadcrumbs";
 import { RangeCard } from "@/components/sections/range-card";
+import { CatalogueCTA } from "@/components/sections/catalogue-cta";
 import { EnquirySection } from "@/components/funnel/enquiry-section";
 import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -71,6 +72,8 @@ export default function HaierRangePage() {
           </div>
         </Container>
       </Section>
+
+      <CatalogueCTA tone="bone" />
 
       <EnquirySection />
     </main>

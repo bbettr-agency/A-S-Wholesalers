@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Clock, Phone, MessageCircle, Mail } from "lucide-react";
+import { MapPin, Clock, Phone, MessageCircle, Mail, Download } from "lucide-react";
 import { Container } from "@/components/ui/layout";
 import { site, telLink, whatsappLink, mapsLink, addressOneLine } from "@/config/site";
 import { footerNav } from "@/config/navigation";
+import { catalogue } from "@/config/distributor";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -44,6 +45,16 @@ export function Footer() {
                 <span>{site.hours.weekdays}</span>
               </p>
             </address>
+
+            <a
+              href={catalogue.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cta="download-catalogue"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-brand-fog underline-offset-4 transition-colors hover:text-brand-bone hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+            >
+              <Download className="h-4 w-4 shrink-0 text-brand-accent" aria-hidden="true" /> Download the Haier catalogue
+            </a>
           </div>
 
           {/* Nav link columns */}
@@ -94,7 +105,7 @@ export function Footer() {
         {/* Legal + credit */}
         <div className="mt-16 border-t border-white/10 pt-8">
           <p className="max-w-2xl text-xs leading-relaxed text-brand-steel">
-            Haier and all product names are trademarks of Haier. A&S Wholesalers is a supplier of Haier air conditioning.
+            Haier and all product names are trademarks of Haier. A&S Wholesalers is an authorised distributor of Haier air conditioning.
           </p>
           <div className="mt-4 flex flex-col gap-2 text-xs text-brand-steel sm:flex-row sm:items-center sm:justify-between">
             <p>© {year} {site.name}. All rights reserved.</p>

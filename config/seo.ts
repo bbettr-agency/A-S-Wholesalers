@@ -9,13 +9,16 @@
 import { site } from "./site";
 
 export const seo = {
-  titleDefault: "Haier Air Conditioning Wholesaler | A&S Wholesalers",
+  titleDefault: "Authorised Haier Air Conditioning Distributor | A&S Wholesalers",
   titleTemplate: "%s | A&S Wholesalers",
   description:
-    "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion, Gauteng – for retailers, resellers and trade partners looking to stock Haier.",
+    "A&S Wholesalers is an authorised distributor of Haier air conditioning, supplying the full range from Centurion, Gauteng to independent retailers and resellers – with nationwide delivery, spares and after-sales support.",
   keywords: [
     // Commercial / trade intent (primary under the wholesale positioning)
+    "Haier authorised distributor South Africa",
+    "Haier air conditioning distributor",
     "Haier air conditioning wholesaler",
+    "Haier wholesaler South Africa",
     "Haier air conditioning supplier",
     "Haier aircon distributor",
     "air conditioning wholesaler",

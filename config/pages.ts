@@ -1,9 +1,9 @@
 /**
  * Page-level copy for the Phase 2 routes. Trade-aware, factual, in the approved
- * A&S voice. NO invented facts: no company history, years, staff numbers,
- * customer counts, MOQ, pricing, discounts, delivery coverage, exclusivity or
- * "authorised distributor". Only owner-confirmed positioning + Haier catalogue
- * facts (Haier facts attributed to Haier).
+ * A&S voice. Owner-confirmed (2026-10): authorised Haier distributor, nationwide
+ * delivery, spares, after-sales, Haier warranty. STILL NO invented facts: no
+ * company history, years, staff/customer counts, MOQ, published pricing,
+ * discounts, exclusivity or "official". Haier facts attributed to Haier.
  */
 
 export const rangeIndex = {
@@ -22,13 +22,13 @@ export const rangeIndex = {
 export const tradeSupply = {
   metaTitle: "Trade Supply – Stock Haier",
   metaDescription:
-    "A&S Wholesalers supplies the Haier air-conditioning range to the trade – independent retailers and resellers. Understand the range and start a trade enquiry.",
+    "A&S Wholesalers is an authorised Haier air-conditioning distributor supplying independent retailers and resellers – trade pricing, nationwide delivery, Haier spares and after-sales support. Start a trade enquiry.",
   hero: {
     eyebrow: "Trade supply",
     headline: "Stock Haier.",
     headlineAccent: "Supplied",
     headlineRest: "by A&S.",
-    lead: "A&S Wholesalers distributes the complete Haier air-conditioning range from Centurion. If you sell or resell air conditioning, you can source the range through us and supply it to your own customers.",
+    lead: "A&S Wholesalers is an authorised distributor of Haier Air Conditioners, supplying the complete range from Centurion with nationwide delivery. If you sell or resell air conditioning, you can source the range through us and supply it to your own customers.",
   },
   audience: {
     eyebrow: "Who it's for",
@@ -45,27 +45,18 @@ export const tradeSupply = {
     heading: "One catalogue. Residential and commercial.",
     lead: "Wall-mounted, solar, multi-split, ducted and cassette – from a 9,000 BTU bedroom split to a 36,000 BTU commercial cassette. One supplier covers the whole spread.",
   },
-  process: {
-    eyebrow: "How it works",
-    heading: "Straightforward to get started.",
-    steps: [
-      { n: "01", title: "Explore the range", body: "Use the Haier Range pages to understand the systems, capacities and applications you can offer." },
-      { n: "02", title: "Send a trade enquiry", body: "Tell us about your business and the ranges you're interested in stocking." },
-      { n: "03", title: "We discuss supply", body: "A&S comes back during business hours to talk through supplying your business." },
-    ],
-  },
 };
 
 export const about = {
   metaTitle: "About",
   metaDescription:
-    "A&S Wholesalers is a Haier air-conditioning wholesaler in Centurion, Gauteng – distributing the complete Haier range to retailers and resellers across the trade.",
+    "A&S Wholesalers is an authorised distributor of Haier air conditioning in Centurion, Gauteng – supplying the complete Haier range to independent retailers and resellers, with nationwide delivery and after-sales support.",
   hero: {
     eyebrow: "About A&S",
     headline: "The wholesale layer",
     headlineAccent: "between Haier",
     headlineRest: "and your shelves.",
-    lead: "A&S Wholesalers is a Haier air-conditioning wholesaler based in Centurion, Gauteng. We distribute the complete Haier range and supply it to independent retailers and resellers – the businesses that stock and sell Haier to their own customers.",
+    lead: "A&S Wholesalers is an authorised distributor of Haier Air Conditioners, based in Centurion, Gauteng. We supply the complete Haier range to independent retailers and resellers – the businesses that stock and sell Haier to their own customers.",
   },
   what: {
     eyebrow: "What we do",

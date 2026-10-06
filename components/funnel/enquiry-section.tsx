@@ -5,6 +5,7 @@ import { DimensionRule } from "@/components/ui/data";
 import { Reveal } from "@/engine/motion";
 import { site, telLink, whatsappLink } from "@/config/site";
 import { enquiryCopy } from "@/config/enquiry";
+import { retailRouting } from "@/config/distributor";
 import { EnquiryForm } from "./enquiry-form";
 
 /**
@@ -68,6 +69,18 @@ export function EnquirySection({
 
                 <p className="mt-6 flex items-center gap-2 text-sm text-brand-fog">
                   <Clock className="h-4 w-4 text-brand-steel" aria-hidden="true" /> {site.hours.weekdays}
+                </p>
+
+                <p className="mt-6 border-t border-white/10 pt-5 text-sm leading-relaxed text-brand-steel">
+                  {retailRouting.text}{" "}
+                  <a
+                    href={whatsappLink("Hi A&S Wholesalers, I'm looking for a single Haier unit for my home – could you point me to a retailer you supply?")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-brand-fog underline-offset-4 transition-colors hover:text-brand-bone hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-state-focus"
+                  >
+                    {retailRouting.linkText}
+                  </a>
                 </p>
               </div>
             </Reveal>

@@ -48,7 +48,8 @@ export const enquiryFields: EnquiryField[] = [
   { name: "phone", label: "Phone", type: "tel", required: true, autoComplete: "tel", inputMode: "tel" },
   { name: "businessType", label: "Business type", type: "select", required: false, options: businessTypeOptions },
   { name: "location", label: "Where are you based?", type: "text", required: false, autoComplete: "address-level2", placeholder: "Town / city" },
-  { name: "interest", label: "Haier range of interest", type: "select", required: false, full: true },
+  { name: "interest", label: "Haier range of interest", type: "select", required: false },
+  { name: "quantity", label: "Estimated quantity", type: "text", required: false, placeholder: "e.g. 20 – 50 units (optional)" },
   {
     name: "message",
     label: "Your enquiry",
@@ -62,7 +63,7 @@ export const enquiryFields: EnquiryField[] = [
 export const enquiryCopy = {
   eyebrow: "Trade enquiry",
   heading: "Looking to stock Haier? Let's talk.",
-  lead: "Tell us about your business and the Haier ranges you're interested in stocking. We'll come back to discuss supply.",
+  lead: "Tell us about your business, the Haier ranges you want to stock and the quantities you're looking at. We'll come back to discuss supply and pricing.",
   submit: "Send trade enquiry",
   submitting: "Sending…",
   reassurance: "No obligation · We reply during business hours · Or reach us on WhatsApp",

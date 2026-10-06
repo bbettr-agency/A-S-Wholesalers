@@ -4,11 +4,12 @@
  * TWO STRICTLY SEPARATED SETS:
  *  1. haierCredentials – belong to HAIER (the manufacturer). Verifiable, from the
  *     supplied 2026 catalogue. Always rendered with explicit Haier attribution.
- *  2. supplierPoints – what A&S offers as the supplier. Stated factually. NO
- *     invented stats: no founding year, install counts, testimonials, ratings, or
- *     "authorised/official distributor" wording (none are verified).
+ *  2. supplierPoints – what A&S offers as the supplier. Stated factually. A&S IS
+ *     an authorised Haier distributor (certificate-backed, 2026-10), so that is
+ *     stated. Still NO invented stats: no founding year, install counts,
+ *     testimonials, ratings, or "exclusive/official" wording.
  *
- * Supplier credentials are never transferred onto A&S (OS truth standard).
+ * Haier's own credentials are never transferred onto A&S (OS truth standard).
  */
 
 export interface Credential {
@@ -36,25 +37,26 @@ export const haierCredentials: Credential[] = [
   },
 ];
 
-/** What A&S offers the trade, stated as fact – distinct from Haier. */
+/** What A&S offers the trade, stated as fact – distinct from Haier. All owner-
+ *  confirmed (2026-10); authorised status is certificate-backed. */
 export const supplierPoints = [
   {
-    title: "The full Haier range, one wholesaler",
-    body: "Wall-mounted, multi-split, ducted, cassette and solar – residential through to commercial – sourced from a single supplier.",
+    title: "Authorised Haier distributor",
+    body: "An authorised distributor of Haier Air Conditioners – the full range, supplied to the trade through the proper channel.",
   },
   {
-    title: "Based in Centurion, Gauteng",
-    body: "Stocked and supplied from Icon Industrial Park in Sunderland Ridge, Centurion.",
+    title: "Nationwide delivery",
+    body: "Source the whole Haier range from one Centurion wholesaler and have it delivered across South Africa, arranged to suit your order.",
   },
   {
-    title: "Product know-how behind the range",
-    body: "Tell us the customer or the project and we'll point you to the Haier model and capacity that fits – so you can quote with confidence.",
+    title: "Backed after the sale",
+    body: "Genuine Haier spare parts, after-sales support and the manufacturer warranty behind every unit you supply on.",
   },
 ] as const;
 
-/** Compact proof strip used in-hero (all factual, no numbers invented). */
+/** Compact proof strip used in-hero (all factual, certificate-backed). */
 export const heroProof: { label: string }[] = [
-  { label: "The complete Haier range" },
+  { label: "Authorised Haier distributor" },
   { label: "For retailers & resellers" },
-  { label: "Distributed from Centurion" },
+  { label: "Nationwide delivery" },
 ];

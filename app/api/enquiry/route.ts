@@ -21,6 +21,7 @@ interface EnquiryPayload {
   businessType?: string;
   location?: string;
   interest?: string;
+  quantity?: string;
   message?: string;
   source_product?: string;
   consent?: string;
@@ -62,6 +63,7 @@ export async function POST(request: Request) {
     businessType: (body.businessType ?? "").trim(),
     location: (body.location ?? "").trim(),
     interest: body.interest ?? "",
+    quantity: (body.quantity ?? "").trim(),
     sourceProduct: (body.source_product ?? "").trim(),
     message: (body.message ?? "").trim(),
     attribution: body.attribution ?? {},
@@ -87,6 +89,7 @@ export async function POST(request: Request) {
       name: lead.name,
       email: lead.email,
       interest: lead.interest,
+      quantity: lead.quantity,
     });
   }
 

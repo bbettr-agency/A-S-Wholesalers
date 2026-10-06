@@ -8,10 +8,12 @@
  * not individual homeowners buying one unit. The site stays highly informational
  * about the Haier range; the commercial objective is larger trade enquiries.
  *
- * Confirmed facts only: A&S distributes/wholesales Haier from Centurion and works
- * with trade partners. NOT stated (unconfirmed): MOQ, trade pricing, dealer
- * discounts, exclusivity, credit, nationwide delivery, "authorised/official
- * distributor". Haier facts stay attributed to Haier.
+ * Confirmed facts (owner, 2026-10): A&S is an AUTHORISED distributor of Haier
+ * (certificate-backed), wholesales from Centurion, delivers nationwide, supplies
+ * Haier spares and after-sales, and the Haier manufacturer warranty applies.
+ * STILL NOT stated (unconfirmed): published prices, percentage discounts, pricing
+ * tiers, MOQ, credit terms, "free delivery", exclusivity, "official". Haier facts
+ * stay attributed to Haier.
  */
 
 export const hero = {

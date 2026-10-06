@@ -24,7 +24,7 @@ export function localBusinessSchema() {
       postalCode: site.address.postalCode,
       addressCountry: "ZA",
     },
-    areaServed: { "@type": "AdministrativeArea", name: "Gauteng, South Africa" },
+    areaServed: { "@type": "Country", name: "South Africa" },
     openingHoursSpecification: site.hours.schema.map((h) => ({
       "@type": "OpeningHoursSpecification",
       dayOfWeek: h.days.map((d) => `https://schema.org/${d}`),
@@ -82,6 +82,19 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
       position: i + 1,
       name: it.name,
       item: abs(it.url),
+    })),
+  };
+}
+
+/** FAQPage schema from verified question/answer pairs. */
+export function faqSchema(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((it) => ({
+      "@type": "Question",
+      name: it.q,
+      acceptedAnswer: { "@type": "Answer", text: it.a },
     })),
   };
 }

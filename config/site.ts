@@ -3,10 +3,11 @@
  * NAP and conversion channels. No contact detail or business fact is hardcoded in
  * a component (OS config rule, SYSTEM/02).
  *
- * TRUTH DISCIPLINE: every value here is client-stated or confirmed. A&S has NOT
- * verified founding year, years of experience, install counts, testimonials,
- * certifications of its own, or "authorised/official distributor" status – so none
- * appear anywhere. Haier's credentials live in config/trust.ts, attributed to Haier.
+ * TRUTH DISCIPLINE: every value here is client-stated or confirmed. A&S IS an
+ * authorised distributor of Haier Air Conditioners (certificate-backed, 2026-10),
+ * so that status is now used. Still NOT verified/used: founding year, years of
+ * experience, install counts, testimonials, "exclusive/official" status, published
+ * pricing. Haier's credentials live in config/trust.ts, attributed to Haier.
  */
 
 export const site = {
@@ -24,7 +25,7 @@ export const site = {
   // with trade partners. Centurion confirmed; national reach NOT confirmed.
   tagline: "Haier air conditioning, supplied to the trade.",
   shortDescription:
-    "A&S Wholesalers distributes the full Haier air-conditioning range from Centurion, Gauteng – supplying independent retailers, resellers and trade partners looking to stock Haier.",
+    "A&S Wholesalers is an authorised distributor of Haier air conditioning, supplying the full range from Centurion, Gauteng to independent retailers and resellers – with nationwide delivery, Haier spares and after-sales support.",
 
   contact: {
     phone: {

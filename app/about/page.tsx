@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Reveal } from "@/engine/motion";
 import { Breadcrumbs } from "@/components/funnel/breadcrumbs";
 import { Location } from "@/components/sections/location";
+import { Certificate } from "@/components/sections/certificate";
 import { EnquirySection } from "@/components/funnel/enquiry-section";
 import { buildMetadata } from "@/lib/metadata";
 import { breadcrumbSchema } from "@/lib/schema";
@@ -67,16 +68,8 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* Product context image */}
-      <Section tone="bone" compact>
-        <Container>
-          <Reveal preset="imageReveal">
-            <div className="relative aspect-[16/7] w-full overflow-hidden rounded-3xl ring-1 ring-brand-line">
-              <Image src="/images/lifestyle/living-room-wide.jpg" alt="A Haier wall-mounted air conditioner in a bright modern interior" fill sizes="100vw" quality={82} className="object-cover" />
-            </div>
-          </Reveal>
-        </Container>
-      </Section>
+      {/* Authorised-distributor certificate – primary A&S credibility */}
+      <Certificate tone="bone" />
 
       {/* Haier credentials – dark inset, attributed to Haier */}
       <Section tone="mist">
@@ -98,6 +91,17 @@ export default function AboutPage() {
                   </div>
                 ))}
               </dl>
+            </div>
+          </Reveal>
+        </Container>
+      </Section>
+
+      {/* Product context image */}
+      <Section tone="bone" compact>
+        <Container>
+          <Reveal preset="imageReveal">
+            <div className="relative aspect-[16/7] w-full overflow-hidden rounded-3xl ring-1 ring-brand-line">
+              <Image src="/images/lifestyle/living-room-wide.jpg" alt="A Haier wall-mounted air conditioner in a bright modern interior" fill sizes="100vw" quality={82} className="object-cover" />
             </div>
           </Reveal>
         </Container>
