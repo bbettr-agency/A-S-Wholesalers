@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone, MessageCircle, ChevronDown } from "lucide-react";
-import { useScrollPast, THRESHOLD } from "@/engine/motion";
+import { useScrollPast } from "@/engine/motion";
 import { cn } from "@/lib/utils";
 import { site, telLink, whatsappLink } from "@/config/site";
 import { primaryNav, rangeMega } from "@/config/navigation";
@@ -17,7 +17,10 @@ import { CallButton } from "./channel-buttons";
  * catalogue. Real routes; never animates height/padding via Motion.
  */
 export function Header() {
-  const scrolled = useScrollPast(THRESHOLD.header);
+  // Larger, premium header at the top of the page; condenses to the compact size
+  // once the visitor scrolls ~56px. A one-time threshold toggle (not a per-frame
+  // height calc), transitioned on the compositor-cheap properties only.
+  const scrolled = useScrollPast(56);
   const [open, setOpen] = useState(false);
   const [mega, setMega] = useState(false);
   const [mobileRange, setMobileRange] = useState(false);
@@ -76,15 +79,20 @@ export function Header() {
             : "border-b border-transparent bg-brand-bone/60 backdrop-blur-sm",
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
-          <Link href="/" className="flex items-center py-3.5" aria-label={`${site.name} – home`}>
+        <div
+          className={cn(
+            "mx-auto flex max-w-7xl items-center justify-between px-6 motion-safe:transition-[padding] motion-safe:duration-300 motion-safe:ease-brand lg:px-8",
+            scrolled ? "py-2.5" : "py-4 md:py-5",
+          )}
+        >
+          <Link href="/" className="flex items-center" aria-label={`${site.name} – home`}>
             <Image
               src="/brand/ans-logo.png"
               alt={`${site.name} logo`}
               width={997}
               height={337}
               priority
-              className={cn("w-auto transition-[height] duration-300 ease-brand", scrolled ? "h-8" : "h-9 md:h-10")}
+              className={cn("w-auto motion-safe:transition-[height] motion-safe:duration-300 motion-safe:ease-brand", scrolled ? "h-8 md:h-9" : "h-11 md:h-14")}
             />
           </Link>
 

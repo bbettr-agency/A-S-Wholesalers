@@ -26,18 +26,19 @@ export function Hero() {
         fill
         priority
         sizes="100vw"
-        quality={82}
-        className="-z-10 object-cover object-[50%_26%]"
+        quality={85}
+        className="-z-10 object-cover object-[52%_28%] lg:object-[50%_18%]"
       />
-      {/* Legibility wash – strong in the centre (behind the copy), fading to the
-          edges so the windows and sofa read clearly. Restrained, not opaque. */}
+      {/* Legibility treatment – a localised light pool behind the centred copy
+          that blends smoothly outward, so the photograph (windows, sofa, the Haier
+          unit) stays vivid and the hero reads as one continuous image. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 [background:radial-gradient(125%_125%_at_50%_44%,rgba(251,251,252,0.88)_0%,rgba(251,251,252,0.7)_38%,rgba(251,251,252,0.34)_70%,rgba(251,251,252,0.05)_100%)]"
+        className="absolute inset-0 -z-10 [background:radial-gradient(78%_82%_at_50%_48%,rgba(251,251,252,0.80)_0%,rgba(251,251,252,0.52)_38%,rgba(251,251,252,0.2)_66%,rgba(251,251,252,0)_88%)]"
       />
 
       <Container className="relative">
-        <div className="mx-auto flex min-h-[600px] max-w-3xl flex-col items-center justify-center py-28 text-center sm:min-h-[620px] md:py-28 lg:min-h-[680px]">
+        <div className="mx-auto flex min-h-[600px] max-w-3xl flex-col items-center justify-center py-28 text-center sm:min-h-[640px] md:py-28 lg:min-h-[740px]">
           <div {...h.lcp}>
             <p className="font-medium text-xs uppercase tracking-[0.2em] text-brand-graphite">{hero.eyebrow}</p>
             <h1 className="mx-auto mt-4 max-w-3xl font-display text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.02em] text-brand-ink sm:text-5xl lg:text-[3.75rem]">
