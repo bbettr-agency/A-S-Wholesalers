@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/hero";
+import { Certificate } from "@/components/sections/certificate";
 import { Positioning } from "@/components/sections/positioning";
 import { RangeDiscovery } from "@/components/sections/range-discovery";
 import { WhyHaier } from "@/components/sections/why-haier";
@@ -10,13 +11,14 @@ import { EnquirySection } from "@/components/funnel/enquiry-section";
 
 /**
  * Home page composition — the section chain. Each section answers the question the
- * previous one raised: who → what → which fits me → why Haier → the range →
- * home or business → why A&S → where → enquire.
+ * previous one raised: what → proof (authorised) → who → which fits me → why
+ * Haier → the range → home or business → why A&S → where → enquire.
  */
 export function HomePage() {
   return (
     <main id="main">
       <Hero />
+      <Certificate tone="bone" eager className="pt-6 md:pt-10" />
       <Positioning />
       <RangeDiscovery />
       <WhyHaier />

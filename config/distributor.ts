@@ -15,7 +15,7 @@ export const certificate = {
   heading: "Authorised to distribute Haier.",
   // Printed wording on the certificate, used verbatim so copy and document agree.
   statement: "Authorised Distributor of Haier Air Conditioners",
-  body: "A&S Wholesalers is an authorised distributor of Haier Air Conditioners, supplying the range to independent retailers and trade customers. The authorisation is issued and signed by Haier South Africa.",
+  body: "A&S Wholesalers is an authorised distributor of Haier Air Conditioners, supplying independent retailers and trade customers.",
   issuedBy: "Issued by Haier South Africa",
   viewLabel: "View distribution certificate",
   image: "/documents/haier-authorised-distributor-certificate.webp",

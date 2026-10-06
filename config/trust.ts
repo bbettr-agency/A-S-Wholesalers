@@ -41,12 +41,12 @@ export const haierCredentials: Credential[] = [
  *  confirmed (2026-10); authorised status is certificate-backed. */
 export const supplierPoints = [
   {
-    title: "Authorised Haier distributor",
-    body: "An authorised distributor of Haier Air Conditioners – the full range, supplied to the trade through the proper channel.",
+    title: "One point of contact",
+    body: "Wall splits through to commercial cassettes – the whole Haier range sourced from one Centurion wholesaler, not five.",
   },
   {
     title: "Nationwide delivery",
-    body: "Source the whole Haier range from one Centurion wholesaler and have it delivered across South Africa, arranged to suit your order.",
+    body: "Have the range delivered across South Africa, arranged to suit the size of your order.",
   },
   {
     title: "Backed after the sale",

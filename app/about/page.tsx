@@ -68,8 +68,8 @@ export default function AboutPage() {
         </Container>
       </Section>
 
-      {/* Authorised-distributor certificate – primary A&S credibility */}
-      <Certificate tone="bone" />
+      {/* Authorised-distributor certificate – integrated proof (home carries the full moment) */}
+      <Certificate tone="bone" compact />
 
       {/* Haier credentials – dark inset, attributed to Haier */}
       <Section tone="mist">

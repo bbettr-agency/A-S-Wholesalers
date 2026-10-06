@@ -3,6 +3,7 @@ import { ArrowUpRight, BadgeCheck } from "lucide-react";
 import { Container, Section } from "@/components/ui/layout";
 import { Eyebrow } from "@/components/ui/typography";
 import { Reveal } from "@/engine/motion";
+import { cn } from "@/lib/utils";
 import { certificate } from "@/config/distributor";
 
 /**
@@ -10,27 +11,50 @@ import { certificate } from "@/config/distributor";
  * not decoration. The real rendered document is the visual hero; the copy states
  * the authorised-distributor fact once, cleanly. No fake badges or shields.
  *
- * `compact` renders a tighter two-column trust moment (for Trade Supply); the
- * full variant is the primary credibility section (About).
+ * `full` (default) is the primary trust moment (homepage below the hero, About):
+ * substantial copy/document balance, the certificate scaled to read clearly as a
+ * real document. `compact` is a tighter, integrated proof reference (Trade Supply).
+ * One component, two variants – no second design.
  */
 export function Certificate({
   tone = "mist",
   compact = false,
+  eager = false,
+  className,
 }: {
   tone?: "bone" | "mist";
   compact?: boolean;
+  /** Required when the section sits at/above the fold (homepage #2) so the copy
+   *  reveal animates on mount instead of waiting for a scroll observer. */
+  eager?: boolean;
+  className?: string;
 }) {
   return (
-    <Section tone={tone} id="authorised-distributor">
+    <Section tone={tone} id="authorised-distributor" compact={compact} className={className}>
       <Container>
-        <div className="grid items-center gap-10 lg:grid-cols-[1fr_0.85fr] lg:gap-16">
-          <Reveal>
-            <div>
+        <div
+          className={cn(
+            "grid items-center gap-10",
+            compact ? "lg:grid-cols-[1fr_0.72fr] lg:gap-12" : "lg:grid-cols-[1fr_0.92fr] lg:gap-14",
+          )}
+        >
+          <Reveal eager={eager}>
+            <div className="max-w-xl">
               <Eyebrow>{certificate.eyebrow}</Eyebrow>
-              <h2 className="mt-3 font-display text-3xl font-bold leading-[1.1] tracking-tight text-brand-ink md:text-4xl">
+              <h2
+                className={cn(
+                  "mt-3 font-display font-bold leading-[1.08] tracking-tight text-brand-ink",
+                  compact ? "text-2xl md:text-3xl" : "text-3xl md:text-[2.6rem]",
+                )}
+              >
                 {certificate.heading}
               </h2>
-              <p className="mt-5 max-w-prose text-base leading-relaxed text-brand-graphite md:text-lg">
+              <p
+                className={cn(
+                  "mt-5 max-w-prose leading-relaxed text-brand-graphite",
+                  compact ? "text-base" : "text-lg",
+                )}
+              >
                 {certificate.body}
               </p>
 
@@ -39,7 +63,7 @@ export function Certificate({
                 {certificate.statement}
               </p>
 
-              <div className="mt-7">
+              <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
                 <a
                   href={certificate.pdf}
                   target="_blank"
@@ -50,29 +74,32 @@ export function Certificate({
                   {certificate.viewLabel}
                   <ArrowUpRight className="h-4 w-4 transition-transform duration-200 ease-brand group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
-                <p className="mt-3 text-xs font-medium uppercase tracking-[0.14em] text-brand-steel">
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-brand-steel">
                   {certificate.issuedBy}
                 </p>
               </div>
             </div>
           </Reveal>
 
-          <Reveal delay={0.08} preset={compact ? "fadeUp" : "imageReveal"}>
+          <Reveal delay={0.08} eager={eager} preset={compact ? "fadeUp" : "imageReveal"}>
             {/* The real document, framed as evidence. Click opens the full PDF. */}
             <a
               href={certificate.pdf}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${certificate.viewLabel} (PDF, opens in a new tab)`}
-              className="group relative mx-auto block w-full max-w-sm rounded-xl bg-white p-3 shadow-ink ring-1 ring-brand-line transition-transform duration-300 ease-brand hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-state-focus md:p-4"
+              className={cn(
+                "group relative block w-full rounded-xl bg-white p-3 shadow-ink ring-1 ring-brand-line transition-transform duration-300 ease-brand hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-state-focus md:p-4 lg:ml-auto",
+                compact ? "mx-auto max-w-xs" : "mx-auto max-w-md lg:mx-0 lg:max-w-[460px]",
+              )}
             >
               <div className="relative aspect-[595/842] w-full overflow-hidden rounded-md ring-1 ring-brand-line/70">
                 <Image
                   src={certificate.image}
                   alt={certificate.imageAlt}
                   fill
-                  sizes="(max-width: 1024px) 80vw, 380px"
-                  quality={88}
+                  sizes={compact ? "(max-width: 1024px) 70vw, 300px" : "(max-width: 1024px) 85vw, 460px"}
+                  quality={90}
                   className="object-contain"
                 />
               </div>
