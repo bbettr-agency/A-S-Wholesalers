@@ -8,37 +8,43 @@ import { hero } from "@/config/home";
 import { heroProof } from "@/config/trust";
 
 /**
- * Hero – Capability archetype, executed as a single photographic canvas. The
- * lifestyle image (a Haier wall-split in a premium interior) is the hero
- * BACKGROUND; the centred message sits over it. A centre-weighted bone wash keeps
- * the navy/red type legible while the sunset windows and sofa stay vivid. The H1
- * is the LCP and is never animated.
+ * Hero – Capability archetype, executed as a single full-bleed photographic
+ * canvas (Foxtron hero architecture, A&S light character). The lifestyle image
+ * (a Haier wall-split in a premium interior) fills the whole hero edge-to-edge;
+ * the centred message sits inside it. The legibility treatment is COHESIVE – a
+ * uniform light veil plus a gentle, large central lift – so the photo reads as
+ * one continuous image with no washed-out centre rectangle. The H1 is the LCP
+ * and is never animated.
  */
 export function Hero() {
   const h = heroStack({ character: "precise" });
 
   return (
     <section className="relative isolate overflow-hidden bg-brand-mist">
-      {/* Background photograph */}
+      {/* Full-bleed background photograph (edge to edge) */}
       <Image
         src={hero.image}
         alt={hero.imageAlt}
         fill
         priority
         sizes="100vw"
-        quality={85}
-        className="-z-10 object-cover object-[52%_28%] lg:object-[50%_18%]"
+        quality={86}
+        className="-z-10 object-cover object-[54%_30%] md:object-[50%_24%] lg:object-[50%_20%]"
       />
-      {/* Legibility treatment – a localised light pool behind the centred copy
-          that blends smoothly outward, so the photograph (windows, sofa, the Haier
-          unit) stays vivid and the hero reads as one continuous image. */}
+      {/* Cohesive light treatment, not a central blob:
+          1) a uniform veil lightens the whole frame evenly (keeps colour/depth);
+          2) a large, gentle central lift raises legibility behind the copy while
+             fading so smoothly it never reads as a rectangle;
+          3) a whisper-soft top/bottom gradient frames the nav and the hand-off
+             to the certificate section. */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-brand-bone/[0.44]" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 [background:radial-gradient(78%_82%_at_50%_48%,rgba(251,251,252,0.80)_0%,rgba(251,251,252,0.52)_38%,rgba(251,251,252,0.2)_66%,rgba(251,251,252,0)_88%)]"
+        className="absolute inset-0 -z-10 [background:linear-gradient(to_bottom,rgba(251,251,252,0.18)_0%,transparent_26%,transparent_82%,rgba(251,251,252,0.22)_100%)]"
       />
 
       <Container className="relative">
-        <div className="mx-auto flex min-h-[600px] max-w-3xl flex-col items-center justify-center py-28 text-center sm:min-h-[640px] md:py-28 lg:min-h-[740px]">
+        <div className="mx-auto flex min-h-[600px] max-w-3xl flex-col items-center justify-center py-28 text-center sm:min-h-[640px] lg:min-h-[84vh]">
           <div {...h.lcp}>
             <p className="font-medium text-xs uppercase tracking-[0.2em] text-brand-graphite">{hero.eyebrow}</p>
             <h1 className="mx-auto mt-4 max-w-3xl font-display text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.02em] text-brand-ink sm:text-5xl lg:text-[3.75rem]">
@@ -56,7 +62,7 @@ export function Hero() {
               <Button href={hero.primaryCta.href} variant="primary" size="lg" className="w-full sm:w-auto" trailingIcon={<ArrowRight className="h-4 w-4 transition-transform duration-200 ease-brand group-hover:translate-x-1" />}>
                 {hero.primaryCta.label}
               </Button>
-              <Button href={hero.secondaryCta.href} variant="secondary" size="lg" className="w-full bg-brand-bone/70 backdrop-blur-sm sm:w-auto">
+              <Button href={hero.secondaryCta.href} variant="secondary" size="lg" className="w-full bg-brand-bone shadow-lift sm:w-auto">
                 {hero.secondaryCta.label}
               </Button>
             </div>
