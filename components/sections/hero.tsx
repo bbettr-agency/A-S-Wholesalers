@@ -8,53 +8,49 @@ import { hero } from "@/config/home";
 import { heroProof } from "@/config/trust";
 
 /**
- * Hero – Capability archetype, executed as a single full-bleed photographic
- * canvas (Foxtron hero architecture, A&S light character). The lifestyle image
- * (a Haier wall-split in a premium interior) fills the whole hero edge-to-edge;
- * the centred message sits inside it. The legibility treatment is COHESIVE – a
- * uniform light veil plus a gentle, large central lift – so the photo reads as
- * one continuous image with no washed-out centre rectangle. The H1 is the LCP
- * and is never animated.
+ * Hero – one full-bleed lifestyle photograph (Foxtron hero architecture). The
+ * image keeps its REAL colours; the text is adapted to the photo (white, with the
+ * A&S red kept on "supplied"). There is exactly ONE <Image> and ONE uniform
+ * readability tint applied to the WHOLE frame – no central panel, no white wash,
+ * no side fills. A tall hero shows as much of the scene as possible. The H1 is
+ * the LCP and is never animated.
  */
 export function Hero() {
   const h = heroStack({ character: "precise" });
 
   return (
-    <section className="relative isolate overflow-hidden bg-brand-mist">
-      {/* Full-bleed background photograph (edge to edge) */}
+    <section className="relative isolate overflow-hidden bg-brand-ink">
+      {/* ONE full-bleed photograph (edge to edge). Real colours preserved. */}
       <Image
         src={hero.image}
         alt={hero.imageAlt}
         fill
         priority
         sizes="100vw"
-        quality={86}
-        className="-z-10 object-cover object-[54%_30%] md:object-[50%_24%] lg:object-[50%_20%]"
+        quality={88}
+        className="-z-10 object-cover object-[56%_30%] lg:object-[50%_38%]"
       />
-      {/* Cohesive light treatment, not a central blob:
-          1) a uniform veil lightens the whole frame evenly (keeps colour/depth);
-          2) a large, gentle central lift raises legibility behind the copy while
-             fading so smoothly it never reads as a rectangle;
-          3) a whisper-soft top/bottom gradient frames the nav and the hand-off
-             to the certificate section. */}
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-brand-bone/[0.44]" />
+      {/* Single UNIFORM readability tint over the whole photo (identical left /
+          centre / right – never a central panel) + a whisper-soft top & bottom
+          deepening so the nav and the base read without washing the image. */}
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-brand-ink/[0.34]" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 [background:linear-gradient(to_bottom,rgba(251,251,252,0.18)_0%,transparent_26%,transparent_82%,rgba(251,251,252,0.22)_100%)]"
+        className="absolute inset-0 -z-10 [background:linear-gradient(to_bottom,rgba(15,24,41,0.42)_0%,transparent_26%,transparent_70%,rgba(15,24,41,0.5)_100%)]"
       />
 
       <Container className="relative">
-        <div className="mx-auto flex min-h-[600px] max-w-3xl flex-col items-center justify-center py-28 text-center sm:min-h-[640px] lg:min-h-[84vh]">
+        <div className="mx-auto flex min-h-[540px] max-w-3xl flex-col items-center justify-center py-20 text-center [text-shadow:0_1px_20px_rgba(8,12,22,0.45)] lg:min-h-[94svh] lg:py-28">
           <div {...h.lcp}>
-            <p className="font-medium text-xs uppercase tracking-[0.2em] text-brand-graphite">{hero.eyebrow}</p>
-            <h1 className="mx-auto mt-4 max-w-3xl font-display text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.02em] text-brand-ink sm:text-5xl lg:text-[3.75rem]">
+            <p className="font-medium text-xs uppercase tracking-[0.22em] text-white/85">{hero.eyebrow}</p>
+            <h1 className="mx-auto mt-4 max-w-3xl font-display text-[2.5rem] font-extrabold leading-[1.03] tracking-[-0.02em] text-white sm:text-5xl lg:text-[3.75rem]">
               {hero.headline}
               <br className="hidden sm:block" /> <Accent>{hero.headlineAccent}</Accent> {hero.headlineRest}
             </h1>
           </div>
 
           <Reveal {...h.step(0)}>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-brand-graphite">{hero.sub}</p>
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/90">{hero.sub}</p>
           </Reveal>
 
           <Reveal {...h.step(1)}>
@@ -62,7 +58,7 @@ export function Hero() {
               <Button href={hero.primaryCta.href} variant="primary" size="lg" className="w-full sm:w-auto" trailingIcon={<ArrowRight className="h-4 w-4 transition-transform duration-200 ease-brand group-hover:translate-x-1" />}>
                 {hero.primaryCta.label}
               </Button>
-              <Button href={hero.secondaryCta.href} variant="secondary" size="lg" className="w-full bg-brand-bone shadow-lift sm:w-auto">
+              <Button href={hero.secondaryCta.href} variant="secondary" size="lg" onDark className="w-full sm:w-auto">
                 {hero.secondaryCta.label}
               </Button>
             </div>
@@ -71,7 +67,7 @@ export function Hero() {
           <Reveal {...h.step(2)}>
             <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
               {heroProof.map((p) => (
-                <li key={p.label} className="flex items-center gap-2 text-sm font-semibold text-brand-graphite">
+                <li key={p.label} className="flex items-center gap-2 text-sm font-semibold text-white">
                   <Check className="h-4 w-4 text-brand-accent" aria-hidden="true" />
                   {p.label}
                 </li>
